@@ -24,16 +24,16 @@ int main()
   float sum, difference, product, quotient;
 
   // TODO: Assign the variable `sum` the value of `num1` plus `num2`.
-
+	sum = num1 + num2;
 
   // TODO: Assign the variable `difference` the value of `num1` minus `num2`.
-
+	difference = num1 - num2;
 
   // TODO: Assign the variable `product` the value of `num1` times `num2`.
-
+	product = num1 * num2;
 
   // TODO: Assign the variable `quotient` the value of `num1` divided by `num2`.
-
+	quotient = num1 / num2;
 
   cout << endl; // Adding more space
   cout << "ARITHMETIC:" << endl;
