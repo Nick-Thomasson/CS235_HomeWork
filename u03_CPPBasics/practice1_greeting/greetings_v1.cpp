@@ -10,9 +10,9 @@ int main()
 {
   // TODO: Update the placeholder text below, NAME, COLOR, and SOMETHING, with your own text.
 
-  cout << "Hello, I'm: NAME" << endl;
-  cout << "My favorite color is: COLOR" << endl;
-  cout << "This semester I hope to learn about... SOMETHING" << endl;
+  cout << "Hello, I'm: Nick Thomasson" << endl;
+  cout << "My favorite color is: Blue" << endl;
+  cout << "This semester I hope to learn about... Functions and how to call them!" << endl;
 
   // Return 0 means quit program with no errors, in this context.
   return 0;

@@ -35,10 +35,24 @@ int main()
   cout << endl << "---- PET 2 ----" << endl;
 
   // TODO: Create variables `name2`, `age2`, `animal2`, `breed2`, based on the previous example.
-
+  string name2;
+  int    age2;
+  string animal2;
+  string breed2;
 
   // TODO: Ask the user to enter the name, age, animal, and breed for pet 2.
+  cout << "Name: ";             // Display prompt
+  getline( cin, name2 );    // Get string input
 
+  cout << "Age:  ";             // Display prompt
+  cin >> age2;              // Get int input
+  cin.ignore();                 // Flush the input buffer
+
+  cout << "Animal: ";           // Display prompt
+  getline( cin, animal2 );  // Get string input
+
+  cout << "Breed: ";            // Display prompt
+  getline( cin, breed2 );   // Get string input
 
   // ------- DISPLAY RESULTS -------
 
@@ -67,10 +81,15 @@ int main()
 
 
   // TODO: Display information for pet 2
+  cout << setw( COL1 ) << "1";
+  cout << setw( COL2 ) << name2;
+  cout << setw( COL3 ) << age2;
+  cout << setw( COL4 ) << animal2;
+  cout << setw( COL5 ) << breed2;
+  cout << endl;
 
 
 
   // Return 0 means quit program with no errors, in this context.
   return 0;
 }
-
