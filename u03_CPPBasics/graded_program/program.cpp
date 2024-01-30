@@ -5,7 +5,7 @@
 using namespace std;  // Using the C++ STanDard libraries
 
 // - STUDENT CODE -----------------------------------------------------------//
-const string YOURNAME = "Your Name, Spring 2024"; // TODO: Update this to your name!
+const string YOURNAME = "Nick Thomasson, Spring 2024"; // TODO: Update this to your name!
 
 int StudentCode( int guest_count, int pizza_slices )
 {
@@ -13,23 +13,26 @@ int StudentCode( int guest_count, int pizza_slices )
   // The variable `pizza_slices` has an UNKNOWN NUMBER in it.
 
   // TODO: Create an integer variable `slices_per_person`.
-
+	int slices_per_person;
+	int eachGuest;
 
   // TODO: Calculate how many slices of pizza each guest gets (slices divided by guests).
+	eachGuest = pizza_slices / guest_count;
   // Assign the result to the `slices_per_person` variable.
-
+	slices_per_person = eachGuest;
 
   // TODO: Use `cout` to display "Total guests:", and then the value from the `guest_count` variable.
-
+	cout << "Total guests: " << guest_count << endl;
+	
 
   // TODO: Use `cout` to display "Total slices of pizza:", and then the value from the `pizza_slices` variable.
-
+	cout << "Total slices of pizza: " << pizza_slices << endl;
 
   // TODO: Use `cout` to display a message of how many slices of pizza each guest gets
-
+	cout << "Each person gets: " << slices_per_person << " each." << endl;
 
   // TODO: Use the `return` keyword to return the amount of slices (e.g., `return slices_per_person;`).
-  return -1; // erase this line of code!!
+  return slices_per_person;
 }
 
 
