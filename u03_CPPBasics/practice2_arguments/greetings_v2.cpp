@@ -9,9 +9,9 @@ using namespace std;  // Using the C++ STanDard libraries
 int main()
 {
   // TODO: Update the variables below to use your own text.
-  string name = "NAME";
-  string color = "COLOR";
-  string learn_about = "SOMETHING";
+  string name = "Nick Thomasson";
+  string color = "Blue";
+  string learn_about = "Functions";
 
   // You don't have to update anything here now, these output statements are using
   // the variables to get their data from!
