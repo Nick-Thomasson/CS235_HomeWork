@@ -3,6 +3,12 @@
 using namespace std;
 
 int main() {
+	
+	float batches;
+	cout << "How many batches would you like to make?" << endl;
+	cin >> batches;
+	
+	
     //Recipe 1 Variables
     string recipeOneName = "3-Ingredient Mac & Cheese";
     string recipeOneURL = "https://tasty.co/recipe/3-ingredient-mac-cheese";
@@ -33,17 +39,17 @@ int main() {
     cout << "Recipe 1: " << recipeOneName << endl;
     cout << "From " << recipeOneURL << endl << endl;
     cout << "INGREDIENTS:" << endl;
-    cout << "* " << recipeOneIngredientOneAmount << " " << recipeOneIngredientOneUnit << " " << recipeOneIngredientOneName << endl;
-    cout << "* " << recipeOneIngredientTwoAmount << " " << recipeOneIngredientTwoUnit << " " << recipeOneIngredientTwoName << endl;
-    cout << "* " << recipeOneIngredientThreeAmount << " " << recipeOneIngredientThreeUnit << " " << recipeOneIngredientThreeName << endl << endl;
+    cout << "* " << recipeOneIngredientOneAmount * batches << " " << recipeOneIngredientOneUnit << " " << recipeOneIngredientOneName << endl;
+    cout << "* " << recipeOneIngredientTwoAmount * batches << " " << recipeOneIngredientTwoUnit << " " << recipeOneIngredientTwoName << endl;
+    cout << "* " << recipeOneIngredientThreeAmount * batches << " " << recipeOneIngredientThreeUnit << " " << recipeOneIngredientThreeName << endl << endl;
     
     cout << "--------------------------------------------------------------------------------" << endl;
     cout << "Recipe 2: " << recipeTwoName << endl;
     cout << "From " << recipeTwoURL << endl << endl;
     cout << "INGREDIENTS:" << endl;
-    cout << "* " << recipeTwoIngredientOneAmount << " " << recipeTwoIngredientOneName << endl;
-    cout << "* " << recipeTwoIngredientTwoAmount << " box (" << recipeTwoIngredientTwoSize << " " << recipeTwoIngredientTwoUnit << ") " << recipeTwoIngredientTwoName << endl;
-    cout << "* " << recipeTwoIngredientThreeAmount << " " << recipeTwoIngredientThreeName << endl << endl;
+    cout << "* " << recipeTwoIngredientOneAmount * batches << " " << recipeTwoIngredientOneName << endl;
+    cout << "* " << recipeTwoIngredientTwoAmount * batches << " box (" << recipeTwoIngredientTwoSize << " " << recipeTwoIngredientTwoUnit << ") " << recipeTwoIngredientTwoName << endl;
+    cout << "* " << recipeTwoIngredientThreeAmount * batches << " " << recipeTwoIngredientThreeName << endl << endl;
 
     cout << "THE END" << endl;
     return 0;
