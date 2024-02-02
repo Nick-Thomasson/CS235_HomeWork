@@ -2,27 +2,49 @@
 #include <string>
 using namespace std;
 
-int main()
-{
-  cout << "RECIPE PROGRAM" << endl;
+int main() {
+    //Recipe 1 Variables
+    string recipeOneName = "3-Ingredient Mac & Cheese";
+    string recipeOneURL = "https://tasty.co/recipe/3-ingredient-mac-cheese";
+    int recipeOneIngredientOneAmount = 5;
+    string recipeOneIngredientOneName = "milk";
+    string recipeOneIngredientOneUnit = "cups";
+    int recipeOneIngredientTwoAmount = 1;
+    string recipeOneIngredientTwoName = "Elbow Macaroni";
+    string recipeOneIngredientTwoUnit = "lb";
+    int recipeOneIngredientThreeAmount = 2;
+    string recipeOneIngredientThreeName = "Shredded Cheddar Cheese";
+    string recipeOneIngredientThreeUnit = "cubes";
+    
+    //Recipe 2 Variables
+    string recipeTwoName = "3-Ingredient Banana Bread";
+    string recipeTwoURL = "https://www.tasteofhome.com/article/3-ingredient-banana-bread/";
+    int recipeTwoIngredientOneAmount = 3;
+    string recipeTwoIngredientOneName = "very ripe bananas";
+    int recipeTwoIngredientTwoAmount = 1;
+    string recipeTwoIngredientTwoName = "box yellow cake mix";
+    int recipeTwoIngredientTwoSize = 15;
+    string recipeTwoIngredientTwoUnit = "ounces";
+    int recipeTwoIngredientThreeAmount = 2;
+    string recipeTwoIngredientThreeName = "large eggs";
+    
+    cout << "RECIPE PROGRAM" << endl;
+    cout << "--------------------------------------------------------------------------------" << endl;
+    cout << "Recipe 1: " << recipeOneName << endl;
+    cout << "From " << recipeOneURL << endl << endl;
+    cout << "INGREDIENTS:" << endl;
+    cout << "* " << recipeOneIngredientOneAmount << " " << recipeOneIngredientOneUnit << " " << recipeOneIngredientOneName << endl;
+    cout << "* " << recipeOneIngredientTwoAmount << " " << recipeOneIngredientTwoUnit << " " << recipeOneIngredientTwoName << endl;
+    cout << "* " << recipeOneIngredientThreeAmount << " " << recipeOneIngredientThreeUnit << " " << recipeOneIngredientThreeName << endl << endl;
+    
+    cout << "--------------------------------------------------------------------------------" << endl;
+    cout << "Recipe 2: " << recipeTwoName << endl;
+    cout << "From " << recipeTwoURL << endl << endl;
+    cout << "INGREDIENTS:" << endl;
+    cout << "* " << recipeTwoIngredientOneAmount << " " << recipeTwoIngredientOneName << endl;
+    cout << "* " << recipeTwoIngredientTwoAmount << " box (" << recipeTwoIngredientTwoSize << " " << recipeTwoIngredientTwoUnit << ") " << recipeTwoIngredientTwoName << endl;
+    cout << "* " << recipeTwoIngredientThreeAmount << " " << recipeTwoIngredientThreeName << endl << endl;
 
-  cout << "--------------------------------------------------------------------------------" << endl;
-  cout << "Receipt 1: 3-ingredient Mac & Cheese" << endl;
-  cout << "From https://tasty.co/recipe/3-ingredient-mac-cheese" << endl << endl;
-  cout << "INGREDIENTS:" << endl;
-  cout << "* 5 cups milk" << endl;
-  cout << "* 1 lb elbow macoroni" << endl;
-  cout << "* 2 cubes shredded cheddar cheese" << endl << endl;
-  cout << "--------------------------------------------------------------------------------" << endl;
-  
-  cout << "Receipt 2: 3-Ingredient Banana Bread" << endl;
-  cout << "From https://www.tasteofhome.com/article/3-ingredient-banana-bread/" << endl << endl;
-  cout << "INGREDIENTS:" << endl;
-  cout << "* 3-4 very ripe bananas" << endl;
-  cout << "* 1 box (15.25 ounces) yellow cake mix" << endl;
-  cout << "* 2 large eggs" << endl << endl;
-
-
-  cout << "THE END" << endl;
-  return 0;
+    cout << "THE END" << endl;
+    return 0;
 }
