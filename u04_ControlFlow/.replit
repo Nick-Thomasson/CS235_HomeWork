@@ -1,0 +1,4 @@
+run = "./testA.sh && ./testB.sh && ./testC.sh"
+
+[nix]
+channel = "stable-22_11"
