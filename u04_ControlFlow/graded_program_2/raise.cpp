@@ -1,4 +1,3 @@
-
 // - INCLUDES ---------------------------------------------------------------//
 #include <iostream>   // Library that contains `cout` commands
 #include <string>     // Library that contains `string` types
@@ -6,7 +5,7 @@
 using namespace std;  // Using the C++ STanDard libraries
 
 // - STUDENT CODE -----------------------------------------------------------//
-const string YOURNAME = "Your Name, Spring 2024"; // TODO: Update this to your name!
+const string YOURNAME = "Nick Thomasson, Spring 2024"; // TODO: Update this to your name!
 
 int StudentCode( float starting_salary, float raise_per_year, int years )
 {
@@ -22,8 +21,11 @@ int StudentCode( float starting_salary, float raise_per_year, int years )
   // Use `cout` to display the year (counter) and the `updated_salary` each iteration.
   // Make sure to add 1 to current_year each iteration through the loop.
   
+for (current_year = 1; current_year <= years; ++current_year) { 
+    updated_salary = updated_salary + (updated_salary * raise_per_year / 100); 
+    cout << "Year " << current_year << ": $" << fixed << setprecision(2) << updated_salary << endl; 
+}
 
-  // TODO: Return the `updated_salary` as the result.
   return updated_salary;
 }
 
