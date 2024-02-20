@@ -35,7 +35,22 @@ int main()
 
   // TODO: Create a variable `pet2` whose type is `Pet`, like the previous example
   // TODO: Ask the user to enter the name, age, animal, and breed for `pet2`.
+cout << "---- PET 2 ----" << endl;
+  Pet pet2;
 
+  // Ask the user to enter information...
+  cout << "Name: ";             // Display prompt
+  getline( cin, pet2.name );    // Get string input
+
+  cout << "Age:  ";             // Display prompt
+  cin >> pet2.age;              // Get int input
+  cin.ignore();                 // Flush the input buffer
+
+  cout << "Animal: ";           // Display prompt
+  getline( cin, pet2.animal );  // Get string input
+
+  cout << "Breed: ";            // Display prompt
+  getline( cin, pet2.breed );   // Get string input
 
 
   // ------- DISPLAY RESULTS -------
