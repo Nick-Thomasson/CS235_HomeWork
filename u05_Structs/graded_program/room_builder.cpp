@@ -7,13 +7,27 @@ using namespace std;  // Using the C++ STanDard libraries
 #include "Room.h"
 
 // - STUDENT CODE -----------------------------------------------------------//
-const string YOURNAME = "Your Name, Spring 2024"; // TODO: Update this to your name!
+const string YOURNAME = "Nick Thomasson, Spring 2024"; // TODO: Update this to your name!
 
 Room StudentCode( float width, float length )
 {
   Room my_room;
 
-  // TODO: Finish setting up my_room
+ cout << "Please enter the room's width: ";
+ cin >> my_room.width;
+
+ cout << "Please enter the room's length: ";
+ cin >> my_room.length;
+
+  my_room.perimeter = (my_room.width * 2) + (my_room.length *   2);
+  my_room.area = my_room.width * my_room.length;
+
+cout << "RESULTS:" << endl;
+cout << " * width: " << my_room.width << endl;
+cout << " * length: " << my_room.length << endl;
+cout << " * area: " << my_room.area << endl;
+cout << " * perimeter: " << my_room.perimeter << endl;
+
 
   return my_room;
 }
@@ -40,11 +54,11 @@ int main( int argCount, char* args[] )
     break;
 
     case 2:{
-      float width, length;
-      cout << "Enter room's width: ";
-      cin >> width;
-      cout << "Enter room's length: ";
-      cin >> length;
+     float width, length;
+     cout << "Enter room's width: ";
+     cin >> width;
+     cout << "Enter room's length: ";
+     cin >> length;
       
       Room result = StudentCode( width, length );
       cout << "RESULT:" << endl;
