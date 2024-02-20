@@ -1,50 +1,51 @@
 // PROGRAM: Practice using struct
 
 // - INCLUDES ---------------------------------------------------------------//
-#include <iostream>   // Library that contains `cout` commands
+#include <iostream>   
 #include <iomanip>
-#include <string>     // Library that contains `string` types
-using namespace std;  // Using the C++ STanDard libraries
-
+#include <string>     
+using namespace std;  
 #include "Ingredient.h"
 
-// - PROGRAM CODE -----------------------------------------------------------//
+
+Ingredient ing1;
+Ingredient ing2;
+Ingredient ing3;
+Ingredient ing4;
+Ingredient ing5;
+
 int main()
 {
-  // TODO: Update this program to use the Ingredient type instead of separate varaibles for each ingredient.
+ing1.name = "Flour";
+ing1.unit = "Cups";
+ing1.amount = 4.5;
 
-  // TODO: Add "Ingredient ing1;", then set up "ing1.name", "ing1.unit", etc.
-  string ingredient1_name = "Flour";
-  string ingredient1_unit = "Cups";
-  float  ingredient1_amount = 4.5;
+ing2.name = "Sugar";
+ing2.unit =  "Tablespoons";
+ing2.amount =  1;
 
-  // Same for the rest of these
-  string ingredient2_name = "Sugar";
-  string ingredient2_unit = "Tablespoons";
-  float  ingredient2_amount = 1;
+ing3.name = "Instant Yeast";
+ing3.unit =  "Teaspoons";
+ing3.amount =  2.25;
 
-  string ingredient3_name = "Instant Yeast";
-  string ingredient3_unit = "Teaspoons";
-  float  ingredient3_amount = 2.25;
+ing4.name = "Water";
+ing4.unit = "Cups";
+ing4.amount = 1.66;
 
-  string ingredient4_name = "Water";
-  string ingredient4_unit = "Cups";
-  float  ingredient4_amount = 1.66;
-
-  string ingredient5_name = "Table Salt";
-  string ingredient5_unit = "Teaspoons";
-  float  ingredient5_amount = 2.5;
+ing5.name = "Table Salt";
+ing5.unit = "Teaspoons";
+ing5.amount = 2.5;
 
 
   cout << "BREAD RECIPE" << endl << endl;
 
   // TODO: Update how the data is outputted
   cout << "Ingredients" << endl;
-  cout << "* " << ingredient1_amount << " " << ingredient1_unit << " of " << ingredient1_name << endl;
-  cout << "* " << ingredient2_amount << " " << ingredient2_unit << " of " << ingredient2_name << endl;
-  cout << "* " << ingredient3_amount << " " << ingredient3_unit << " of " << ingredient3_name << endl;
-  cout << "* " << ingredient4_amount << " " << ingredient4_unit << " of " << ingredient4_name << endl;
-  cout << "* " << ingredient5_amount << " " << ingredient5_unit << " of " << ingredient5_name << endl;
+  cout << "* " <<  ing1.amount << " " << ing1.unit << " of " << ing1.name << endl;
+  cout << "* " <<  ing2.amount << " " << ing2.unit << " of " << ing2.name << endl;
+  cout << "* " <<  ing3.amount << " " << ing3.unit << " of " << ing3.name << endl;
+  cout << "* " <<  ing4.amount << " " << ing4.unit << " of " << ing4.name << endl;
+  cout << "* " <<  ing5.amount << " " << ing5.unit << " of " << ing5.name << endl;
 
  // Return 0 means quit program with no errors, in this context.
  return 0;
