@@ -1,0 +1,34 @@
+// PROGRAM: Practice dereferencing pointers
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+  string studentA = "Luna", studentB = "Kabe", studentC = "Korra";
+
+  cout << endl << "ORIGINAL TABLE" << endl;
+  cout << "studentA address: " << &studentA << ", value: " << studentA << endl;
+  cout << "studentB address: " << &studentB << ", value: " << studentB << endl;
+  cout << "studentC address: " << &studentC << ", value: " << studentC << endl;
+  cout << endl;
+
+  string* ptrStudent = &studentA;
+  cout << "ptrStudent is pointing to address: " << ptrStudent << endl;
+
+  cout << "CURRENT VALUE: ";
+  // TODO: `cout` the pointed-to student with `*ptrStudent`, the dereferenced pointer.
+
+  // TODO: Use a `getline` function, overwriting `*ptrStudent`, the dereferenced pointer.
+  cout << "Enter a new value: ";
+
+  cout << endl << endl << "UPDATED TABLE" << endl;
+  cout << "studentA address: " << &studentA << ", value: " << studentA << endl;
+  cout << "studentB address: " << &studentB << ", value: " << studentB << endl;
+  cout << "studentC address: " << &studentC << ", value: " << studentC << endl;
+  cout << endl;
+
+
+  return 0;
+}

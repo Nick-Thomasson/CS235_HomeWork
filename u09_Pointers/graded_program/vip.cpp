@@ -8,22 +8,23 @@ using namespace std;  // Using the C++ STanDard libraries
 // - STUDENT CODE -----------------------------------------------------------//
 const string YOURNAME = "Your Name, Spring 2024"; // TODO: Update this to your name!
 
-string StudentCode( string filename, int line_number )
+string StudentCode( int vip )
 {
-  // TODO: Create ifstream object named `input`, try to open the `filename`.
+  string player1 = "Hikaru";
+  string player2 = "Umi";
+  string player3 = "Fuu";
 
+  string* ptrVip = nullptr;
 
-  // TODO: Check for an input fail. Display error message and return "" on failure.
+  // TODO: Point `ptrVip` to one of the players' addresses based on
+  // whether `vip` is 1, 2, or 3.
 
+  // TODO: If `ptrVip` is still pointing to nullptr, return "UNKNOWN".
+  // Otherwise, return `*ptrVip` to dereference the pointer and return
+  // the name it is pointing to.
 
-  // TODO: Load in lines from the `input` file until you hit the
-  // "n-th" line (given by `line_number`). Return the line loaded in here.
-
-
-  // TODO: Return "" if nothing was returned during the file read.
-  return "";
+  return nullptr; // TEMPORARY - REMOVE ME!!
 }
-
 
 
 //   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -39,11 +40,11 @@ int main( int argCount, char* args[] )
       // Run tests
       Tester();
     }
-  else if ( argCount == 3 )
+  else if ( argCount == 2 )
     {
       // Run program
-      string line = StudentCode( string( args[1] ), stoi( args[2] ) );
-      cout << "RESULT: " << line << endl;
+      string result = StudentCode( stoi( args[1] ) );
+      cout << "RESULT: " << result << endl;
     }
   else
     {
@@ -59,14 +60,12 @@ int main( int argCount, char* args[] )
         }
       else
         {
-          string input1;
-          int input2;
-          cout << "Enter filename: ";
-          cin >> input1;
-          cout << "Enter line number: ";
-          cin >> input2;
-          string line = StudentCode( input1, input2 );
-          cout << "RESULT: " << line << endl;
+          cout << ""
+            cout << "Enter ID of VIP student: ";
+          int index;
+          cin >> index;
+          string result = StudentCode( index );
+          cout << "RESULT: " << result << endl;
         }
     }
 
@@ -77,53 +76,48 @@ int main( int argCount, char* args[] )
 void Tester()
 {
   const string GRN = "\033[0;32m"; const string RED = "\033[0;31m"; const string BOLD = "\033[0;35m"; const string CLR = "\033[0m";
-  cout << "2024-01-U08-P2-TEST; STUDENT: " << YOURNAME << endl;
-
-  ofstream out;
-
-  out.open( "test1.txt" );
-  out << "the quick brown fox" << endl << "jumps over the lazy dog" << endl;
-  out.close();
-
-  out.open( "test2.txt" );
-  out << "we can dance if we want to" << endl << "we can leave your friends behind" << endl << "cuz your friends don't dance" << endl << "and if they don't dance" << endl << "well then they're no friends of mine." << endl;
-  out.close();
+  cout << "2024-01-U09-P1-TEST; STUDENT: " << YOURNAME << endl;
 
   // (Automated test):
 
-  const int TOTAL_TESTS = 2;
-  string in1[TOTAL_TESTS]; // inputs 1
-  int    in2[TOTAL_TESTS]; // inputs 2
+  const int TOTAL_TESTS = 4;
+  int    in1[TOTAL_TESTS]; // inputs 1
   string exo[TOTAL_TESTS]; // expected output
   string aco[TOTAL_TESTS]; // actual output
 
   // Setup test 1
-  in1[0] = "test1.txt";
-  in2[0] = 1;
-  exo[0] = "jumps over the lazy dog";
+  in1[0] = 1;
+  exo[0] = "Hikaru";
 
   // Setup test 2
-  in1[1] = "test2.txt";
-  in2[1] = 2;
-  exo[1] = "cuz your friends don't dance";
+  in1[1] = 2;
+  exo[1] = "Umi";
+
+  // Setup test 3
+  in1[2] = 3;
+  exo[2] = "Fuu";
+
+  // Setup test 4
+  in1[3] = 4;
+  exo[3] = "UNKNOWN";
 
   // Run tests
   for ( int i = 0; i < TOTAL_TESTS; i++ )
   {
     cout << CLR;
-    aco[i] = StudentCode( in1[i], in2[i] );
+    aco[i] = StudentCode( in1[i] );
 
     if ( aco[i] == exo[i] )
     {
       // PASS
       cout << GRN << "[PASS] ";
-      cout << " TEST " << i+1 << ", StudentCode(" << in1[i] << ", " << in2[i] << ") = " << aco[i] << endl;
+      cout << " TEST " << i+1 << ", StudentCode(" << in1[i] << ") = " << aco[i] << endl;
     }
     else
     {
       // FAIL
       cout << RED << "[FAIL] ";
-      cout << " TEST " << i+1 << ", StudentCode(" << in1[i] << ", " << in2[i] << ")" << endl;
+      cout << " TEST " << i+1 << ", StudentCode(" << in1[i] << ")" << endl;
       cout << "   EXPECTED OUTPUT: [" << exo[i] << "]" << endl;
       cout << "   ACTUAL OUTPUT:   [" << aco[i] << "]" << endl;
     }

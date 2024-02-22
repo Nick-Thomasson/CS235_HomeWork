@@ -44,25 +44,44 @@ int main( int argCount, char* args[] )
 {
   cout << fixed << setprecision( 2 );
   if ( argCount == 2 && string( args[1] ) == "test" )
-  {
-    // Run tests
-    Tester();
-  }
+    {
+      // Run tests
+      Tester();
+    }
   else if ( argCount == 4 )
-  {
-    // Run program
-    float updated_salary = StudentCode( stof( args[1] ), stof( args[2] ), stoi( args[3] ) );
-    cout << "RESULT: " << updated_salary << endl;
-    cout << "Check results.txt for additional information" << endl;
-  }
+    {
+      // Run program
+      float updated_salary = StudentCode( stof( args[1] ), stof( args[2] ), stoi( args[3] ) );
+      cout << "RESULT: " << updated_salary << endl;
+      cout << "Check results.txt for additional information" << endl;
+    }
   else
-  {
-    cout << "argCount is " << argCount << "; NOT ENOUGH ARGUMENTS!" << endl;
-    cout << "Run tests:      " << args[0] << " test" << endl;
-    cout << "Run as program: " << args[0] << " starting_salary raise_per_year years" << endl;
-    cout << "NOTE: raise_per_year should be a decimal, not a percent!" << endl;
-    return 1;
-  }
+    {
+      std::cout << "1. Run AUTOMATED TESTS" << std::endl;
+      std::cout << "2. Run PROGRAMS" << std::endl;
+      int choice;
+      std::cout << ">> ";
+      std::cin >> choice;
+
+      if ( choice == 1 )
+        {
+          Tester();
+        }
+      else
+        {
+          float input1, input2;
+          int input3;
+          cout << "Enter starting salary: $";
+          cin >> input1;
+          cout << "Enter raise per year (as decimal): ";
+          cin >> input2;
+          cout << "Enter the amount of years to compute: ";
+          cin >> input3;
+          float updated_salary = StudentCode( input1, input2, input3 );
+          cout << "RESULT: " << updated_salary << endl;
+          cout << "Check results.txt for additional information" << endl;
+        }
+    }
 
   return 0;
 }
