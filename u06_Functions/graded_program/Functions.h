@@ -15,6 +15,6 @@ int GetChoice( int min, int max );
 float StudentCode();
 void Tester();
 
-const string YOURNAME = "Your Name, Spring 2024"; // TODO: Update this to your name!
+const string YOURNAME = "Nick Thomasson, Spring 2024"; // TODO: Update this to your name!
 
 #endif
