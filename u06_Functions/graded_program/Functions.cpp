@@ -7,53 +7,70 @@ using namespace std;  // Using the C++ STanDard libraries
 #include "Functions.h"
 
 // -- FUNCTION DEFINITION GOES HERE -------------------------------------------
-// TODO: Add DisplayMenu here
-void DisplayMenu()
-{
+ void DisplayMenu(){
+	cout << "1. Add item: " << endl;
+	cout << "2. Checkout: " << endl;
 }
 
-// TODO: Add FormatUSD here
-void FormatUSD( float price )
-{
+ void FormatUSD (float price){
+cout << fixed << setprecision(2);
+cout << "You entered the amount of $" << price << endl;
 }
 
-// TODO: Add GetTaxPercent here
-float GetTaxPercent()
-{
-  return -1; // REMOVE THIS AND REPLACE WITH PROPER DATA
+float GetTaxPercent(){
+	return 9.61;}
+
+float GetPricePlusTax(float original_price, float tax_percent){
+return original_price + ( tax_percent/100 * original_price );
 }
 
-// TODO: Add GetPricePlusTax here
-float GetPricePlusTax( float original_price, float tax_percent )
-{
-  return -1; // REMOVE THIS AND REPLACE WITH PROPER DATA
+float GetNewPrice(){
+	float price;
+	cout << "Please enter the price of the item: $";
+	cin >> price;
+	return price;
 }
 
-// TODO: Add GetNewPrice function. Inputs: None, Output: float
-// Within the function ask the user to enter the price of a new item, use `cin` to get their input.
-// Store it in a float variable. `return` this float at the end of the function.
-float GetNewPrice()
-{
-}
-
-// TODO: Add GetChoice function. Inputs: min and max (both ints), Output: int
-// Within this function ask the user to enter a number between the `min` and `max`.
-// Store their choice in an integer variable, then use a while loop - while their input
-// is invalid, ask them to re-enter their selection.
-// Make sure to use `return` to return their selection at the end.
-int GetChoice( int min, int max )
-{
+int GetChoice(int min, int max){
+    int choice;
+    cout << "Please enter " << min << " or " << max << " ";
+    cin >> choice;
+    while (choice < min || choice > max) {
+        cout << "Invalid number! Please enter again: ";
+        cin >> choice; 
+    }
+    return choice; 
 }
 
 float StudentCode()
 {
-  float final_price = 0;
-  float transaction_total = 0;
-  bool running = true;
-  float new_price;
-  int choice;
+	float final_price = 0;
+	float transaction_total = 0;
+	bool running = true;
+	float new_price;
+	int choice;
 
-  // TODO: Add program code
+	while (running == true){
+		cout << "Current transaction amount: " << endl;
+		FormatUSD(transaction_total);
+		DisplayMenu();
+		choice = GetChoice(1,2);
+		if (choice == 1){
+			new_price = GetNewPrice();
+			transaction_total = new_price + transaction_total;	  
+			}
+		else{
+			running = false;
+			}
 
-  return final_price;
+}
+
+	cout << "RECEIPT" << endl;
+	final_price = GetPricePlusTax(transaction_total, GetTaxPercent());
+	FormatUSD(transaction_total);
+	cout << "Tax rate:" << GetTaxPercent() << endl;
+	cout << "After tax" << endl;
+	FormatUSD(final_price);
+	return final_price;
+
 }
