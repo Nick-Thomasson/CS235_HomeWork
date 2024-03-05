@@ -1,56 +1,43 @@
 #include <iostream>
 #include <string>
 using namespace std;
+#include "Ingredient.h"
+#include "Functions.h"
 
-int main() {
-	
-	float batches;
-	cout << "How many batches would you like to make?" << endl;
-	cin >> batches;
-	
-	
-    //Recipe 1 Variables
-    string recipeOneName = "3-Ingredient Mac & Cheese";
-    string recipeOneURL = "https://tasty.co/recipe/3-ingredient-mac-cheese";
-    int recipeOneIngredientOneAmount = 5;
-    string recipeOneIngredientOneName = "milk";
-    string recipeOneIngredientOneUnit = "cups";
-    int recipeOneIngredientTwoAmount = 1;
-    string recipeOneIngredientTwoName = "Elbow Macaroni";
-    string recipeOneIngredientTwoUnit = "lb";
-    int recipeOneIngredientThreeAmount = 2;
-    string recipeOneIngredientThreeName = "Shredded Cheddar Cheese";
-    string recipeOneIngredientThreeUnit = "cubes";
-    
-    //Recipe 2 Variables
-    string recipeTwoName = "3-Ingredient Banana Bread";
-    string recipeTwoURL = "https://www.tasteofhome.com/article/3-ingredient-banana-bread/";
-    int recipeTwoIngredientOneAmount = 3;
-    string recipeTwoIngredientOneName = "very ripe bananas";
-    int recipeTwoIngredientTwoAmount = 1;
-    string recipeTwoIngredientTwoName = "box yellow cake mix";
-    int recipeTwoIngredientTwoSize = 15;
-    string recipeTwoIngredientTwoUnit = "ounces";
-    int recipeTwoIngredientThreeAmount = 2;
-    string recipeTwoIngredientThreeName = "large eggs";
-    
-    cout << "RECIPE PROGRAM" << endl;
-    cout << "--------------------------------------------------------------------------------" << endl;
-    cout << "Recipe 1: " << recipeOneName << endl;
-    cout << "From " << recipeOneURL << endl << endl;
-    cout << "INGREDIENTS:" << endl;
-    cout << "* " << recipeOneIngredientOneAmount * batches << " " << recipeOneIngredientOneUnit << " " << recipeOneIngredientOneName << endl;
-    cout << "* " << recipeOneIngredientTwoAmount * batches << " " << recipeOneIngredientTwoUnit << " " << recipeOneIngredientTwoName << endl;
-    cout << "* " << recipeOneIngredientThreeAmount * batches << " " << recipeOneIngredientThreeUnit << " " << recipeOneIngredientThreeName << endl << endl;
-    
-    cout << "--------------------------------------------------------------------------------" << endl;
-    cout << "Recipe 2: " << recipeTwoName << endl;
-    cout << "From " << recipeTwoURL << endl << endl;
-    cout << "INGREDIENTS:" << endl;
-    cout << "* " << recipeTwoIngredientOneAmount * batches << " " << recipeTwoIngredientOneName << endl;
-    cout << "* " << recipeTwoIngredientTwoAmount * batches << " box (" << recipeTwoIngredientTwoSize << " " << recipeTwoIngredientTwoUnit << ") " << recipeTwoIngredientTwoName << endl;
-    cout << "* " << recipeTwoIngredientThreeAmount * batches << " " << recipeTwoIngredientThreeName << endl << endl;
+int main(){
+  bool running = true;
+  float batches;
+  string recipe1_name, recipe1_url, recipe2_name, recipe2_url;
+  Ingredient recipe1_ing1, recipe1_ing2, recipe1_ing3, recipe2_ing1, recipe2_ing2, recipe2_ing3;
 
-    cout << "THE END" << endl;
-    return 0;
+  // Call to SetupRecipes function
+  SetupRecipes(recipe1_name, recipe1_url, recipe1_ing1, recipe1_ing2, recipe1_ing3,
+    recipe2_name, recipe2_url, recipe2_ing1, recipe2_ing2, recipe2_ing3);
+
+  while (running) {
+    // Main menu:
+    DisplayMenu();
+    // Get user choice:
+    int choice = GetUserInput(0, 2);
+    // Quit?
+    if (choice == 0) {
+      running = false;
+      break;
+    } else if (choice == 1) {
+      cout << "How many batches would you like to make?" << endl;
+      cin >> batches;
+      cout << "Displaying recipe for 3-Ingredient Mac & Cheese for " << batches << " batches." << endl;
+      cout << "RECIPE PROGRAM" << endl;
+      cout << "--------------------------------------------------------------------------------" << endl;
+      DisplayRecipe(recipe1_name, recipe1_url, batches, recipe1_ing1, recipe1_ing2, recipe1_ing3);
+    } else if (choice == 2) {
+      cout << "How many batches would you like to make?" << endl;
+      cin >> batches;
+      cout << "Displaying recipe for 3-Ingredient Banana Bread for " << batches << " batches." << endl;
+      cout << "RECIPE PROGRAM" << endl;
+      cout << "--------------------------------------------------------------------------------" << endl;
+      DisplayRecipe(recipe2_name, recipe2_url, batches, recipe2_ing1, recipe2_ing2, recipe2_ing3);
+    }
+  }
+
 }
