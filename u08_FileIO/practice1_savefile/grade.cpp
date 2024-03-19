@@ -27,16 +27,20 @@ int main()
   ratio3 = test3score / test3total * 100;
 
   // TODO: Create a variable, type is ofstream, name is `output`.
+  ofstream output;
 
 
   // TODO: Use `output`'s open function to open "score.txt".
-
+  output.open("score.txt");
 
   // TODO: Set formatting for output: output << fixed << setprecision( 2 );
-
+  output << fixed << setprecision(2);
 
   // TODO: Output the following for all three items:
   // testXscore out of testXtotal ( ratioX%)
+  output << test1score << " out of " << test1total << endl;
+  output << test2score << " out of " << test2total << endl;
+  output << test2score << " out of " << test2total << endl;
 
 
   cout << "Info saved to score.txt" << endl;
