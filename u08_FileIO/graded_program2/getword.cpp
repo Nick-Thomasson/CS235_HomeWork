@@ -8,20 +8,34 @@ using namespace std;  // Using the C++ STanDard libraries
 // - STUDENT CODE -----------------------------------------------------------//
 const string YOURNAME = "Your Name, Spring 2024"; // TODO: Update this to your name!
 
-string StudentCode( string filename, int line_number )
+string StudentCode(string filename, int line_number)
 {
-  // TODO: Create ifstream object named `input`, try to open the `filename`.
+	// TODO: Create ifstream object named `input`, try to open the `filename`.
+	ifstream input;
+	input.open(filename);
 
 
-  // TODO: Check for an input fail. Display error message and return "" on failure.
+	// TODO: Check for an input fail. Display error message and return "" on failure.
+	if (input.fail()) {
+		cout << "Error!" << endl;
+		return "";
+	}
 
 
-  // TODO: Load in lines from the `input` file until you hit the
-  // "n-th" line (given by `line_number`). Return the line loaded in here.
+	// TODO: Load in lines from the `input` file until you hit the
+	// "n-th" line (given by `line_number`). Return the line loaded in here.
+	string loadedData;
+	int i = 0;
+	while (getline(input, loadedData)) {
+		i++;
+		if (i == line_number) {
+			return loadedData;
+		}
 
+	}
 
-  // TODO: Return "" if nothing was returned during the file read.
-  return "";
+	// TODO: Return "" if nothing was returned during the file read.
+	return "";
 }
 
 
