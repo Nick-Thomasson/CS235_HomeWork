@@ -19,9 +19,12 @@ int main()
 
   cout << "CURRENT VALUE: ";
   // TODO: `cout` the pointed-to student with `*ptrStudent`, the dereferenced pointer.
+  cout << *ptrStudent << endl;
 
   // TODO: Use a `getline` function, overwriting `*ptrStudent`, the dereferenced pointer.
   cout << "Enter a new value: ";
+  int input;
+  getline(cin, *ptrStudent);
 
   cout << endl << endl << "UPDATED TABLE" << endl;
   cout << "studentA address: " << &studentA << ", value: " << studentA << endl;
