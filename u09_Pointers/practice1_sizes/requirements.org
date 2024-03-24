@@ -1,0 +1,47 @@
+# -*- mode: org -*-
+
+*Example program output:*
+
+#+ATTR_HTML: :class console
+#+BEGIN_SRC terminal :class terminal
+integer size:  4
+float size:    4
+double size:   8
+bool size:     1
+char size:     1
+string size:   32
+#+END_SRC
+
+*Create a project:*
+
+- Start by creating a new project in your IDE. Put your project in the =practice1_sizes= folder.
+- After creating a project, *add a new file* to your project, named "sizes.cpp".
+
+In your .cpp file, start by creating your basic empty C++ program:
+
+#+BEGIN_SRC cpp :class cpp
+int main()
+{
+  return 0;
+}
+#+END_SRC
+
+We're going to be using =cout= and =string= for this program, so make sure to
+have =#include <iostream>=, =#include <string>=, and =using namespace std;= at the top of the file.
+
+*Getting the size of each data type:*
+
+We're going to use the =sizeof()= function to see the size of different data types.
+We can call this function like: =sizeof( int )= and it will return a number, in bytes:
+
+#+BEGIN_SRC cpp :class cpp
+  cout << "integer size:  " << sizeof( int ) << endl;
+#+END_SRC
+
+Finish writing the program by doing the same for the following data types:
+- float
+- double
+- bool
+- char
+- string
+

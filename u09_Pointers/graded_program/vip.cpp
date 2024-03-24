@@ -10,9 +10,9 @@ const string YOURNAME = "Your Name, Spring 2024"; // TODO: Update this to your n
 
 string StudentCode( int vip )
 {
-  string player1 = "Hikaru";
-  string player2 = "Umi";
-  string player3 = "Fuu";
+  string student1 = "Hikaru";
+  string student2 = "Umi";
+  string student3 = "Fuu";
 
   string* ptrVip = nullptr;
 
@@ -22,8 +22,6 @@ string StudentCode( int vip )
   // TODO: If `ptrVip` is still pointing to nullptr, return "UNKNOWN".
   // Otherwise, return `*ptrVip` to dereference the pointer and return
   // the name it is pointing to.
-
-  return nullptr; // TEMPORARY - REMOVE ME!!
 }
 
 
@@ -60,8 +58,7 @@ int main( int argCount, char* args[] )
         }
       else
         {
-          cout << ""
-            cout << "Enter ID of VIP student: ";
+          cout << "Enter ID of VIP student: ";
           int index;
           cin >> index;
           string result = StudentCode( index );

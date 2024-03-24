@@ -1,0 +1,56 @@
+# -*- mode: org -*-
+
+*Example program output:*
+
+#+ATTR_HTML: :class console
+#+BEGIN_SRC terminal :class terminal
+int1's address is: 0x7ffe831367c4
+int2's address is: 0x7ffe831367c8
+int3's address is: 0x7ffe831367cc
+int4's address is: 0x7ffe831367d0
+int5's address is: 0x7ffe831367d4
+
+bool1's address is: 0x7ffe831367bf
+bool2's address is: 0x7ffe831367c0
+bool3's address is: 0x7ffe831367c1
+bool4's address is: 0x7ffe831367c2
+bool5's address is: 0x7ffe831367c3
+#+END_SRC
+
+(Note: each time your run the program the addresses will be different!)
+
+*Create a project:*
+
+- Start by creating a new project in your IDE. Put your project in the =practice2_addresses= folder.
+- After creating a project, *add a new file* to your project, named "addresses.cpp".
+
+In your .cpp file, start by creating your basic empty C++ program:
+
+#+BEGIN_SRC cpp :class cpp
+int main()
+{
+  return 0;
+}
+#+END_SRC
+
+We're going to be using =cout= for this program, so make sure to
+have =#include <iostream>= and =using namespace std;= at the top of the file.
+
+*Getting variable addresses:*
+
+First, declare a set of *integer variables*, you don't have to assign them a value. For example:
+=int1=, =int2=, =int3=, =int4=, and =int5=.
+
+Second, declare a set of *boolean variables*. These also don't need to be initialized:
+=bool1=, =bool2=, =bool3=, =bool4=, =bool5=.
+
+We're going to display the address of each of these variables using the *address-of operator =&=*, like this:
+
+#+BEGIN_SRC cpp :class cpp
+cout << "int1's address is: " << &int1 << endl;
+#+END_SRC
+
+Do this for all of your *int variables* and *bool variables*. Once you run the program, we can see the memory addresses,
+which are written in *hexadecimal* notation.
+
+Integers will be 4-bytes apart in memory, and booleans will be 1-byte apart in memory.

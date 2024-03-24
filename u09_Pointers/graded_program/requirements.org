@@ -1,0 +1,68 @@
+# -*- mode: org -*-
+
+*Example program output:*
+
+#+ATTR_HTML: :class console
+#+BEGIN_SRC terminal :class terminal
+Enter ID of VIP student: 1
+RESULT: Hikaru
+#+END_SRC
+
+*Open a project:*
+
+The =graded_program= folder contains two subfolders: =Project_VisualStudio2022= and =Project_CodeBlocks=.
+If one of these is your IDE, open the project folder inside the appropriate one. Open the *VisualStudioSolution.sln* file
+or the *CodeBlocksProject.cbp* file.
+If you're using Xcode or VScode, I think you can just open the =graded_program= folder to get started.
+
+This program just contains one file: *vip.cpp*. We'll be working in the *StudentCode* function.
+
+#+BEGIN_SRC cpp :class cpp
+string StudentCode( int vip )
+{
+  string student1 = "Hikaru";
+  string student2 = "Umi";
+  string student3 = "Fuu";
+
+  string* ptrVip = nullptr;
+
+  // TODO: Point `ptrVip` to one of the players' addresses based on
+  // whether `vip` is 1, 2, or 3.
+
+  // TODO: If `ptrVip` is still pointing to nullptr, return "UNKNOWN".
+  // Otherwise, return `*ptrVip` to dereference the pointer and return
+  // the name it is pointing to.
+}
+#+END_SRC
+
+This function contains 3 student variables: =student1=, =student2=, and =student3=. It also contains a =ptrVip= pointer variable
+that is currently initialized to =nullptr=. This function takes in =int vip=, the student # who is VIP, and returns a =string=,
+which will be the name of that student - or "UNKNOWN" if it's an invalid index.
+
+*Assigning ptrVip to an address:*
+
+Under the first *TODO* comment use a set of if/else if statements to assign =ptrVip= to an address...
+
+| Value of =vip= parameter | Address to point =ptrVip= to |
+|--------------------------+------------------------------|
+|                        1 | student1's address           |
+|                        2 | student2's address           |
+|                        3 | student3's address           |
+
+(If you're unsure how to do this, I'd suggest looking at the practice programming assignments.)
+
+*Returning a student name or UNKNOWN:*
+
+Under the second *TODO* comment, use an if/else statement. If =ptrVip= is pointing to =nullptr=,
+then return the string literal ="UNKNOWN"=.
+Otherwise, dereference the =ptrVip= pointer as the item to be returned.
+
+All automated tests should pass once finished:
+
+#+ATTR_HTML: :class console
+#+BEGIN_SRC terminal :class terminal
+[PASS]  TEST 1, StudentCode(1) = Hikaru
+[PASS]  TEST 2, StudentCode(2) = Umi
+[PASS]  TEST 3, StudentCode(3) = Fuu
+[PASS]  TEST 4, StudentCode(4) = UNKNOWN
+#+END_SRC

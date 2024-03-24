@@ -1,0 +1,96 @@
+# -*- mode: org -*-
+
+*Example program output:*
+
+#+ATTR_HTML: :class console
+#+BEGIN_SRC terminal :class terminal
+studentA address: 0x7ffdccb9e170, value: Luna
+studentB address: 0x7ffdccb9e190, value: Kabe
+studentC address: 0x7ffdccb9e1b0, value: Korra
+
+ptrStudent is now pointing to: 0
+ptrStudent is now pointing to address: 0x7ffdccb9e170
+ptrStudent is now pointing to address: 0x7ffdccb9e190
+ptrStudent is now pointing to address: 0x7ffdccb9e1b0
+#+END_SRC
+
+*Create a project:*
+
+- Start by creating a new project in your IDE. Put your project in the =practice3_pointers= folder.
+- After creating a project, *add a new file* to your project, named "pointers.cpp".
+
+In your .cpp file, start by creating your basic empty C++ program:
+
+#+BEGIN_SRC cpp :class cpp
+int main()
+{
+  return 0;
+}
+#+END_SRC
+
+We're going to be using =cout= and =string= for this program, so make sure to
+have =#include <iostream>=, =#include <string>=, and =using namespace std;= at the top of the file.
+
+*Working with pointer variables:*
+
+First, we're going to set up three strings to hold student names, such as:
+
+| Variable type | Variable name | Variable value |
+|---------------+---------------+----------------|
+| string        | studentA      | "Luna"         |
+| string        | studentB      | "Kabe"         |
+| string        | studentC      | "Korra"        |
+
+[[file:images/my-cats.jpg]]
+
+Next, we're going to display each variable's *address* and current *value*.
+When we prefix a variable's name with the *address-of operator =&=* we get its address.
+If we just use the variable's name, we get the value it's storing as usual:
+
+#+BEGIN_SRC cpp :class cpp
+cout << "studentA address: " << &studentA << ", value: " << studentA << endl;
+cout << "studentB address: " << &studentB << ", value: " << studentB << endl;
+cout << "studentC address: " << &studentC << ", value: " << studentC << endl;
+#+END_SRC
+
+Next we're going to create a *string pointer* and for safety we're going to initialize it to =nullptr=.
+We do this because =nullptr= is basically 0, and we can tell that "0" is an invalid memory address,
+so it basically marks the pointer as "do not use!!" until it has a valid memory address.
+
+A standard variable declaration looks like: =TYPE NAME = VALUE;=
+
+A pointer variable declaration looks like: =TYPE* NAME = VALUE;=
+
+So in this case, we're going to declare a *string* pointer variable named *ptrStudent* and initialize it to *nullptr*.
+Then, we're going to display what address our pointer is pointing to:
+
+#+BEGIN_SRC cpp :class cpp
+  string* ptrStudent = nullptr;
+  cout << "ptrStudent is now pointing to: " << ptrStudent << endl;
+#+END_SRC
+
+If we run the program right now, it will just show:
+
+#+ATTR_HTML: :class console
+#+BEGIN_SRC terminal :class terminal
+studentA address: 0x7ffdccb9e170, value: Luna
+studentB address: 0x7ffdccb9e190, value: Kabe
+studentC address: 0x7ffdccb9e1b0, value: Korra
+
+ptrStudent is now pointing to: 0
+#+END_SRC
+
+Next, we'll assign the pointer to each string variable's address. Any time we use =cout= on the =ptrStudent= on its own,
+it will retrieve the address that the pointer is /pointing to/.
+
+To point a pointer to a variable's address, we use the form: =POINTER = &VARIABLE;=
+
+So to point it to the first student:
+
+#+BEGIN_SRC cpp :class cpp
+  ptrStudent = &studentA;
+  cout << "ptrStudent is now pointing to address: " << ptrStudent << endl;
+#+END_SRC
+
+Do this for studentB and studentC as well, and your program output should be similar to the example given above
+(except the addresses will always be different).

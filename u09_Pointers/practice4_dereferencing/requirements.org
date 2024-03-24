@@ -1,0 +1,74 @@
+# -*- mode: org -*-
+
+*Example program output:*
+
+#+ATTR_HTML: :class console
+#+BEGIN_SRC terminal :class terminal
+ORIGINAL TABLE
+studentA address: 0x7ffc63090040, value: Luna
+studentB address: 0x7ffc63090060, value: Kabe
+studentC address: 0x7ffc63090080, value: Korra
+
+ptrStudent is pointing to address: 0
+
+ptrStudent is now pointing to address: 0x7ffc63090040
+CURRENT VALUE: Luna
+Enter a new name: Katara
+
+ptrStudent is now pointing to address: 0x7ffc63090060
+CURRENT VALUE: Kabe
+Enter a new name: Aang
+
+ptrStudent is now pointing to address: 0x7ffc63090080
+CURRENT VALUE: Korra
+Enter a new name: Sokka
+
+UPDATED TABLE
+studentA address: 0x7ffc63090040, value: Katara
+studentB address: 0x7ffc63090060, value: Aang
+studentC address: 0x7ffc63090080, value: Sokka
+#+END_SRC
+
+*Copy a project:*
+
+If you would like, you can copy your folder for the =practice3_pointers= part and rename it to =practice4_dereferencing=
+instead of having to make a new project. (Make sure that your *.vcxproj* (Visual Studio) / *.cbp* (Code::Blocks) project
+is inside that folder!)
+
+If you make a new project, we're still starting from the code written in part 3, so copy your program code from there and
+we'll continue.
+
+*Dereferencing pointers:*
+
+In the previous version of the program we assign our =ptrStudent= to the address of each student variable and display the address.
+We are going to add on after these lines. Locate the first part like this:
+
+#+BEGIN_SRC cpp :class cpp
+  ptrStudent = &studentA;
+  cout << "ptrStudent is now pointing to address: " << ptrStudent << endl;
+#+END_SRC
+
+After the cout statement, display another message saying "Please enter a new name:".
+
+Afterwards, we're going to get input from the keyboard and store it in the student variable *indirectly* - we're going to do it via the pointer.
+To do this, we need to *dereference the pointer* by using the *dereference operator: =*=*. We use the asterisk for different types of
+operators, but when it comes /before/ a variable name, it is the dereference operator.
+
+#+BEGIN_SRC cpp :class cpp
+  cout << "Enter a new name: ";
+  getline( cin, *ptrStudent );
+#+END_SRC
+
+This will get the user's input and store the value to the address that =ptrStudent= is pointing to.
+
+Do this after =ptrStudent = &studentB;= and =ptrStudent = &studentC;= as well.
+
+Finally, we want to display the updated list of variables afterwards so we can see our changes:
+
+#+BEGIN_SRC cpp :class cpp
+  cout << endl << endl << "UPDATED TABLE" << endl;
+  cout << "studentA address: " << &studentA << ", value: " << studentA << endl;
+  cout << "studentB address: " << &studentB << ", value: " << studentB << endl;
+  cout << "studentC address: " << &studentC << ", value: " << studentC << endl;
+  cout << endl;
+#+END_SRC
