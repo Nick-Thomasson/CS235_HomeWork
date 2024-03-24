@@ -19,9 +19,11 @@ int main()
   cout << "ptrStudent is now pointing to address: " << ptrStudent << endl;
 
   // TODO: Assign ptrStudent to `studentB`'s address.
+  ptrStudent = &studentB;
   cout << "ptrStudent is now pointing to address: " << ptrStudent << endl;
 
   // TODO: Assign ptrStudent to `studentC`'s address.
+  ptrStudent = &studentC;
   cout << "ptrStudent is now pointing to address: " << ptrStudent << endl;
 
   return 0;

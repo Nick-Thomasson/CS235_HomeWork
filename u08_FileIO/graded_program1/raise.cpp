@@ -8,29 +8,86 @@
 using namespace std;  // Using the C++ STanDard libraries
 
 // - STUDENT CODE -----------------------------------------------------------//
-const string YOURNAME = "Your Name, Spring 2024"; // TODO: Update this to your name!
+const string YOURNAME = "Nick Thomasson, Spring 2024"; // TODO: Update this to your name!
 
 int StudentCode( float starting_salary, float raise_per_year, int years )
 {
   // TODO: Create an ofstream object named `output`, open "results.txt".
-
+    ofstream output;
+    output.open("results.txt");
 
   // TODO: Create float called `updated_salary`. Initialize it to the `starting_salary` amount.
-  float updated_salary = 0;
-
+  float updated_salary = starting_salary;
 
   // TODO: Write "Starting salary:" and the `starting_salary` to the `output` file.
-
+  output << "Starting salary: " << starting_salary << endl;
 
   // TODO: Use a loop, you need to create a counter variable that goes from 1 to `years`.
   // Within the loop, calculate the updated salary with
   // `updated_salary = updated_salary + ( updated_salary * raise_per_year );`
   // Use `output` to display the year (counter) and the `updated_salary` each iteration.
-
+  for (int i = 1; i <= years; i++) {  // Use a for loop for clarity
+      updated_salary += updated_salary * raise_per_year;  // Calculate updated salary
+      output << "Year: " << i << endl;
+      output << "Updated Salary: " << updated_salary << endl;
+  }
 
   // TODO: Return the `updated_salary` as the result.
   return updated_salary;
-  //return -1; // erase this line of code!!
+  
+}
+
+
+
+//   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//   !! DON'T MODIFY ANYTHING BELOW THIS POINT! !!
+//   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// - PROGRAM STARTER --------------------------------------------------------//
+void Tester();
+int main( int argCount, char* args[] )
+{
+  cout << fixed << setprecision( 2 );
+  if ( argCount == 2 && string( args[1] ) == "test" )
+    {
+      // Run tests
+      Tester();
+    }
+  else if ( argCount == 4 )
+    {
+      // Run program
+      float updated_salary = StudentCode( stof( args[1] ), stof( args[2] ), stoi( args[3] ) );
+      cout << "RESULT: " << updated_salary << endl;
+      cout << "Check results.txt for additional information" << endl;
+    }
+  else
+    {
+      std::cout << "1. Run AUTOMATED TESTS" << std::endl;
+      std::cout << "2. Run PROGRAMS" << std::endl;
+      int choice;
+      std::cout << ">> ";
+      std::cin >> choice;
+
+      if ( choice == 1 )
+        {
+          Tester();
+        }
+      else
+        {
+          float input1, input2;
+          int input3;
+          cout << "Enter starting salary: $";
+          cin >> input1;
+          cout << "Enter raise per year (as decimal): ";
+          cin >> input2;
+          cout << "Enter the amount of years to compute: ";
+          cin >> input3;
+          float updated_salary = StudentCode( input1, input2, input3 );
+          cout << "RESULT: " << updated_salary << endl;
+          cout << "Check results.txt for additional information" << endl;
+        }
+    }
+
+  return 0;
 }
 
 

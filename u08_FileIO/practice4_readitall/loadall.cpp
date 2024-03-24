@@ -8,14 +8,19 @@ using namespace std;  // Using the C++ STanDard libraries
 
 int main()
 {
-  string line;
+	string line;
 
-  // TODO: Create ifstream named `input`, try to open "fable.txt".
-
-
-  // TODO: While `getline( input, line )` succeeds, then
-  // use `cout` to display the line that was just read.
+	// TODO: Create ifstream named `input`, try to open "fable.txt".
+	ifstream input;
+	input.open("fable.txt");
 
 
-  return 0;
+	// TODO: While `getline( input, line )` succeeds, then
+	// use `cout` to display the line that was just read.
+	while (getline(input, line)) {
+
+		cout << "Read: " << line << endl;
+	}
+
+	return 0;
 }

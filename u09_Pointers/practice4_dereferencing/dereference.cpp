@@ -21,32 +21,13 @@ int main()
   ptrStudent = &studentA;
   cout << "ptrStudent is now pointing to address: " << ptrStudent << endl;
   // TODO: `cout` the pointed-to student with `*ptrStudent`, the dereferenced pointer.
-  cout << "CURRENT VALUE: ";
-  cout << "Enter a new name: ";
+
+  cout << *ptrStudent << endl;
+
   // TODO: Use a `getline` function, overwriting `*ptrStudent`, the dereferenced pointer.
-
-  cout << endl;
-  
-  
-  ptrStudent = &studentB;
-  cout << "ptrStudent is now pointing to address: " << ptrStudent << endl;
-  // TODO: `cout` the pointed-to student with `*ptrStudent`, the dereferenced pointer.
-  cout << "CURRENT VALUE: ";
-  cout << "Enter a new name: ";
-  // TODO: Use a `getline` function, overwriting `*ptrStudent`, the dereferenced pointer.
-
-  cout << endl;
-  
-
-  ptrStudent = &studentC;
-  cout << "ptrStudent is now pointing to address: " << ptrStudent << endl;
-  // TODO: `cout` the pointed-to student with `*ptrStudent`, the dereferenced pointer.
-  cout << "CURRENT VALUE: ";
-  cout << "Enter a new name: ";
-  // TODO: Use a `getline` function, overwriting `*ptrStudent`, the dereferenced pointer.
-
-  
-  
+  cout << "Enter a new value: ";
+  int input;
+  getline(cin, *ptrStudent);
 
   cout << endl << endl << "UPDATED TABLE" << endl;
   cout << "studentA address: " << &studentA << ", value: " << studentA << endl;
