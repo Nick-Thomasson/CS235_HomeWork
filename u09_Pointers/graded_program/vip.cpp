@@ -6,22 +6,46 @@
 using namespace std;  // Using the C++ STanDard libraries
 
 // - STUDENT CODE -----------------------------------------------------------//
-const string YOURNAME = "Your Name, Spring 2024"; // TODO: Update this to your name!
+const string YOURNAME = "Nick Thomason, Spring 2024"; // TODO: Update this to your name!
 
-string StudentCode( int vip )
+string StudentCode(int vip)
 {
-  string student1 = "Hikaru";
-  string student2 = "Umi";
-  string student3 = "Fuu";
+	string player1 = "Hikaru";
+	string player2 = "Umi";
+	string player3 = "Fuu";
 
-  string* ptrVip = nullptr;
+	string* ptrVip = nullptr;
 
-  // TODO: Point `ptrVip` to one of the players' addresses based on
-  // whether `vip` is 1, 2, or 3.
+	// TODO: Point `ptrVip` to one of the players' addresses based on
+	// whether `vip` is 1, 2, or 3.
 
-  // TODO: If `ptrVip` is still pointing to nullptr, return "UNKNOWN".
-  // Otherwise, return `*ptrVip` to dereference the pointer and return
-  // the name it is pointing to.
+	if (vip == 1) {
+		ptrVip = &player1;
+		cout << ptrVip;
+	}
+	else if (vip == 2) {
+		ptrVip = &player2;
+		cout << ptrVip;
+
+	}
+	else if (vip == 3) {
+		ptrVip = &player3;
+		cout << ptrVip;
+	}
+	else {
+		cout << "Invalid choice! Please try again." << endl;
+	}
+
+	// TODO: If `ptrVip` is still pointing to nullptr, return "UNKNOWN".
+	// Otherwise, return `*ptrVip` to dereference the pointer and return
+	// the name it is pointing to.
+
+	if (ptrVip == nullptr) {
+		return "UNKNOWN";
+	}
+	else {
+		return *ptrVip;
+	}
 }
 
 
