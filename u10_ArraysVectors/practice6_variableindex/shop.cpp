@@ -35,12 +35,16 @@ int main()
   }
 
   // TODO: Create an integer variable named `index`.
-
+  int index;
 
   // TODO: Ask the user what they want to eat. Store their response in `index`.
+  cout << "What would you like to eat?" << endl;
+  cin >> index;
 
 
   // TODO: Display the name and price of what they chose, use `product_list[index]` to access the item.
+  cout << "Looks like you chose, " << product_list[index].name << endl;
+  cout << "This comes out to a total of $" << product_list[index].price << endl;
 
 
   cout << endl << "GOODBYE" << endl;
