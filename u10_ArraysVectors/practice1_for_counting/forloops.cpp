@@ -30,6 +30,9 @@ int main()
   // Condition: Loop while `i` is greater than or equal to `low`.
   // Update: Subtract 2 from `i` each time.
   // Within the loop display the value of `i`, with a space afterwards.
+  for (int i = high; i >= low; i = i - 2) {
+      cout << i << " " << endl;
+  }
 
 
   // TODO: Create a for loop using a counter variable `i`.
@@ -37,7 +40,9 @@ int main()
   // Condition: Loop while `i` is less than or equal to `high`.
   // Update: Multiply `i` by 2 each time.
   // Within the loop display the value of `i`, with a space afterwards.
-
+  for (int i = low; i <= high; i = 2 * i) {
+      cout << i << " " << endl;
+  }
 
 
   cout << endl << "GOODBYE" << endl;
