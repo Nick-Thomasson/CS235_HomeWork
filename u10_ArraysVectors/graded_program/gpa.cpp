@@ -6,7 +6,7 @@
 using namespace std;  // Using the C++ STanDard libraries
 
 // - STUDENT CODE -----------------------------------------------------------//
-const string YOURNAME = "Your Name, Spring 2024"; // TODO: Update this to your name!
+const string YOURNAME = "Nick Thomasson, Spring 2024"; // TODO: Update this to your name!
 
 float StudentCode( vector<char> course_grades )
 {
@@ -17,7 +17,28 @@ float StudentCode( vector<char> course_grades )
   // For 'A', add 4.0 to the `total`.     For 'B', add 3.0 to the `total`.
   // For 'C', add 2.0 to the `total`.     For 'D', add 1.0 to the `total`.
   // Otherwise (for 'F'), add 0.0 or don't add anything to the `total`.
+  for (auto& grade : course_grades) {
+      if (grade == 'A') {
+          total = total + 4.0;
+      }
+      else if (grade == 'B') {
+          total = total + 3.0;
+      }
+      else if (grade == 'C') {
+          total = total + 2.0;
+      }
+      else if (grade == 'D') {
+          total = total + 1.0;
+      }
+      else if (grade == 'F') {
+          total = total + 0;
+      }
+      else {
+          cout << "Invalid choice! Please try again. :)" << endl;
+      }
 
+
+  }
 
   // Returns the average
   return total / course_grades.size();
