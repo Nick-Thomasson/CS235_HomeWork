@@ -31,6 +31,7 @@ void Person::Display()
 void Student::SetGpa(float new_gpa)
 {
     // TODO: Assign the `gpa` member variable to the value passed in as the `new_gpa` parameter
+    gpa = new_gpa;
 
 }
 
@@ -39,13 +40,16 @@ float Student::GetGpa() const
     // TODO: Return the `gpa` member variable
 
 
-    return 0; // REMOVE THIS!
+    return gpa; 
 }
 
 void Student::Display()
 {
     // TODO: Display that this is a Student.
     // TODO: Also display the studnet's name and GPA
+    cout << "Student" << endl;
+    cout << "Name: " << GetName();
+    cout << "GPA: " << GetGpa();
 
 }
 
