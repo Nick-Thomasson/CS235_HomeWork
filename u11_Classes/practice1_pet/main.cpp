@@ -38,21 +38,37 @@ int main()
     if ( choice == 1 ) // Update name
     {
       // TODO: Have user enter new name, update `my_pet`'s name via the appropriate function.
+        string newName;
+        cout << "What's the new name?" << endl;
+        cin >> newName;
+        my_pet.SetName(newName);
 
     }
     else if ( choice == 2 ) // Update age
     {
       // TODO: Have user enter new age, update `my_pet`'s age via the appropriate function.
+        int newAge;
+        cout << "What's the new age?" << endl;
+        cin >> newAge;
+        my_pet.SetAge(newAge);
 
     }
     else if ( choice == 3 ) // Update animal
     {
       // TODO: Have user enter new animal type, update `my_pet`'s animal type via the appropriate function.
+        string  newAnimalType;
+        cout << "What's the new animal type?" << endl;
+        cin >> newAnimalType;
+        my_pet.SetAnimal(newAnimalType);
 
     }
     else if ( choice == 4 ) // Update breed
     {
       // TODO: Have user enter new breed, update `my_pet`'s breed via the appropriate function.
+        string  newAnimalBreed;
+        cout << "What's the new animal breed?" << endl;
+        cin >> newAnimalBreed;
+        my_pet.SetBreed(newAnimalBreed);
 
     }
     else if ( choice == 0 )
