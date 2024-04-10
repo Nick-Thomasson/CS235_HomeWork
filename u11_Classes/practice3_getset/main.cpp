@@ -37,26 +37,29 @@ int main()
 
   // TODO: Set the `player`'s name and level.
   // Use the Set functions here.
+  player.SetName(name);
+  player.SetLevel(level);
 
 
   cout << "YOUR CHARACTER" << endl;
   // TODO: Call the player's Display function here.
-
+  player.Display();
 
   cout << endl;
   cout << "LEVEL UP!!" << endl;
   // TODO: Call the player's LevelUp function here.
-
+  player.LevelUp();
 
   cout << endl << "Saving game..." << endl;
 
   // Save the game data back out to the text file
-
-
-
   // TODO: Output the `player`'s name and level to the `output` file, each on their own lines.
   // Use the Get functions here.
 
+  ofstream output;
+  output.open("savegame.txt");
+  output << player.GetName() << endl;
+  output << player.GetLevel() << endl;
 
   output.close();
 
