@@ -18,12 +18,14 @@ int main()
   teacher.SetPay( 85000 );
   
   // TODO: Create a Student variable. Set its name and gpa
-
+  Student student;
+  student.SetName("Nick Thomasson");
+  student.SetGpa(4.0);
   
   buddy.Display();
   teacher.Display();
   // TODO: Call the student's Display function.
-
+  student.Display();
   
   // Return 0 means quit program with no errors, in this context.
   return 0;
