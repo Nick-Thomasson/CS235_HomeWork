@@ -8,19 +8,21 @@ using namespace std;  // Using the C++ STanDard libraries
 #include "Employee.h"
 
 // - STUDENT CODE -----------------------------------------------------------//
-const string YOURNAME = "Your Name, Spring 2024"; // TODO: Update this to your name!
+const string YOURNAME = "Nick Thomasson, Spring 2024"; // TODO: Update this to your name!
 
 int StudentCode( vector<Employee> employee_list, int lookup_id )
 {
   // TODO: Iterate through all the employees in `employee_list`.
   // Check each one's ID, if it matches `lookup_id` then return the index it is at in the vector.
   // If the for loop ends and nothing has been returned, then return -1 for "not found".
+    for (int i = 0; i < employee_list.size(); i++) {
+        if (employee_list[i].GetId() == lookup_id) {
+            return i;
 
-
-
-
-
-  return -1;
+        }
+      
+    }
+    return -1;
 }
 
 //   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
