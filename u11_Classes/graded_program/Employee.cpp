@@ -5,31 +5,26 @@ using namespace std;
 
 Employee::Employee(int new_id, string new_name, float new_wage)
 {
-    // TODO: Initialize the private member variables
-
+    employee_id = new_id;
+    name = new_name;
+    hourly_wage = new_wage;
 }
 
 int Employee::GetId() const
 {
-    // return -1; // TODO: REMOVE THIS PLACEHOLDER
-    // TODO: Return the corresponding private member variable
 
-    return 0; // REMOVE THIS
+    return employee_id;
+
 }
 
 string Employee::GetName() const
 {
-    // return ""; // TODO: REMOVE THIS PLACEHOLDER
-    // TODO: Return the corresponding private member variable
+    return name;
 
-    return "0"; // REMOVE THIS
 }
 
 float Employee::GetWage() const
 {
-    // return -1; // TODO: REMOVE THIS PLACEHOLDER
-    // TODO: Return the corresponding private member variable
 
-
-    return 0; // REMOVE THIS
+    return hourly_wage;
 }
