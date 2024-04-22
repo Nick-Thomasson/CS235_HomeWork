@@ -204,3 +204,24 @@ INGREDIENT END
 
 RECIPE END
 --------------------------------------------------------------------------------
+RECIPE BEGIN
+
+RECIPE NAME
+1
+RECIPE URL
+1
+----------------------------------------
+INGREDIENT BEGIN
+
+INGREDIENT NAME
+1
+INGREDIENT UNIT
+1
+INGREDIENT AMOUNT
+1
+
+INGREDIENT END
+----------------------------------------
+
+RECIPE END
+--------------------------------------------------------------------------------

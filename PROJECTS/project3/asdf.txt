@@ -1,0 +1,57 @@
+Recipe Name: 0. Tiger Butter Candy
+Recipe URL: 0. https://butterwithasideofbread.com/tiger-butter-fudge/
+Ingredient name: Vanilla chips
+Ingredient amount: 11
+Ingredient Unit: oz
+Ingredient name: Creamy peanut butter
+Ingredient amount: 0.5
+Ingredient Unit: cups
+Ingredient name: Semi-sweet chocolate chips
+Ingredient amount: 0.5
+Ingredient Unit: cups
+-------------------------------------
+Recipe Name: 1. White Chocolate Peppermint Pretzels
+Recipe URL: 1. https://www.twopeasandtheirpod.com/white-chocolate-peppermint-pretzels/
+Ingredient name: Vanilla chips
+Ingredient amount: 11
+Ingredient Unit: oz
+Ingredient name: Creamy peanut butter
+Ingredient amount: 0.5
+Ingredient Unit: cups
+Ingredient name: Semi-sweet chocolate chips
+Ingredient amount: 0.5
+Ingredient Unit: cups
+Ingredient name: Pretzel
+Ingredient amount: 35
+Ingredient Unit: chips
+Ingredient name: White chocolate melting wafers
+Ingredient amount: 12
+Ingredient Unit: oz
+Ingredient name: Crushed candy canes
+Ingredient amount: 0.5
+Ingredient Unit: cups
+-------------------------------------
+Recipe Name: 2. Pie for breakfast shake
+Recipe URL: 2. https://www.allrecipes.com/recipe/235558/pie-for-breakfast-shake/
+Ingredient name: Frozen strawberries
+Ingredient amount: 0.75
+Ingredient Unit: Cups
+Ingredient name: Vanilla coconut milk
+Ingredient amount: 0.5
+Ingredient Unit: Cup
+Ingredient name: Greek yogurt
+Ingredient amount: 0.5
+Ingredient Unit: Cup
+Ingredient name: Flax seed meal
+Ingredient amount: 1
+Ingredient Unit: Tablespoon
+Ingredient name: Almond butter
+Ingredient amount: 1
+Ingredient Unit: Tablespoon
+Ingredient name: Honey
+Ingredient amount: 1
+Ingredient Unit: Teaspoon
+Ingredient name: Vanilla extract
+Ingredient amount: 0.5
+Ingredient Unit: Teaspoon
+-------------------------------------
