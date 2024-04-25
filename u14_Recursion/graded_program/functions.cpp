@@ -26,7 +26,13 @@ If no upper-case letters are found, return a space character: ' '
 //! Returns the first uppercase letter found, or ' ' if none are found.
 char GetFirstUppercase_Iter( string text )
 {
-    return 'x'; // Temporary
+    for (size_t i = 0; i < text.size(); i++) {
+        if (IsUppercase(text[i]))
+        {
+            return text[i];
+        }
+    } 
+    return  ' ';
 }
 
 /**
@@ -43,9 +49,16 @@ char GetFirstUppercase_Rec( string text, unsigned int pos /* = 0 */ )
     // Terminating case:
     // No more letters to look at, OR
     // First uppercase letter found.
+    if (pos >= text.size()) {
+        return ' ';
+    }
+    if (IsUppercase(text[pos])) {
+        return text[pos];
+    }
 
     // Recursive case:
     // Still more letters to investigate
+    return GetFirstUppercase_Rec(text, pos + 1);
 
     return 'x'; // Temporary
 }
