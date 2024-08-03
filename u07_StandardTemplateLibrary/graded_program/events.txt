@@ -1,0 +1,33 @@
+STOCK apple 0.76
+STOCK avocado 2.14
+STOCK banana 0.24
+STOCK watermelon 12.59
+
+ENTER Maribel
+CART  Maribel apple
+CART  Maribel apple
+OOPS  Maribel
+CART  Maribel watermelon
+
+ENTER Sara
+CART  Sara apple
+LINEUP Sara
+
+ENTER Cody
+CART Cody watermelon
+CART Cody watermelon
+CART Cody watermelon
+OOPS Cody
+LINEUP Cody
+
+ENTER Rai
+CART Rai avocado
+CART Rai apple
+CART Rai watermelon
+
+LINEUP Maribel
+
+LINEUP Rai
+
+PROCESS
+
