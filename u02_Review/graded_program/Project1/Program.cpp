@@ -18,7 +18,7 @@ void Program::Menu_Main()
     cout << "Current image: \"";
 
     // TODO: Call the `image` variable's GetFilename function.
-
+    image.GetFilename();
 
 
 
@@ -31,7 +31,7 @@ void Program::Menu_Main()
 
     // TODO: Call the GetValidInput function, passing in 0 and 2, and storing the result in the `choice` variable.
 
-
+    choice = GetValidInput(0, 2);
 
 
     switch( choice )
@@ -72,7 +72,7 @@ void Program::Menu_LoadImage()
 
 
   // TODO: Call the `image` variable's Load function, passing in the `filename` variable.
-
+  image.Load(filename);
 
 
 
@@ -89,7 +89,7 @@ void Program::Menu_DrawImage()
 
   // TODO: Call the `image` variable's Draw function.
 
-
+  image.Draw();
 
 
   PressEnterToContinue();

@@ -21,11 +21,42 @@ using namespace std;
 | 'W'        | `cout << WHITE;`   |
 */
 
-void DrawPixel( char code )
+void DrawPixel(char code)
 {
-    // TODO: Based on the `code` passed in, output the corresponding COLOR code.
-
-
+    switch (code)
+    {
+    case ' ':
+        cout << CLEAR;
+        break;
+    case 'K':
+        cout << BLACK;
+        break;
+    case 'R':
+        cout << RED;
+        break;
+    case 'G':
+        cout << GREEN;
+        break;
+    case 'Y':
+        cout << YELLOW;
+        break;
+    case 'B':
+        cout << BLUE;
+        break;
+    case 'M':
+        cout << MAGENTA;
+        break;
+    case 'C':
+        cout << CYAN;
+        break;
+    case 'W':
+        cout << WHITE;
+        break;
+    default:
+        cout << CLEAR; // Default to clear if the code is not recognized
+        break;
+    }
 
     cout << " ";
 }
+
