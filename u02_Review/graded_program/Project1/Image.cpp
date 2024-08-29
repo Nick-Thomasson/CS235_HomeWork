@@ -33,7 +33,7 @@ void Image::Load( string new_filename )
         pixelrows.push_back(line);
     }
 
-
+    input.close();
 
     cout << "Loading file \"" << filename << "\" successful." << endl;
 }

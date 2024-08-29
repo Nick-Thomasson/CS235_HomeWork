@@ -18,13 +18,13 @@ void Program::Menu_Main()
     cout << "Current image: \"";
 
     // TODO: Call the `image` variable's GetFilename function.
-    image.GetFilename();
+    cout << image.GetFilename();
 
 
 
     cout << "\"" << endl << endl;
 
-    cout << "0. Exit" << endl << endl;
+    cout << "0. Exit" << endl;
     cout << "1. Load image" << endl;
     cout << "2. Draw image" << endl;
     cout << endl;
