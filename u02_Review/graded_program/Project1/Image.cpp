@@ -62,6 +62,5 @@ string Image::GetFilename() const
 {
     // TODO: Return the corresponding member variable.
 
-
-    return "XYZ";; // TODO: TEMPORARY ITEM! REMOVE THIS LINE ONCE YOU'VE IMPLEMENTED THIS FUNCTION!!
+    return filename; 
 }
