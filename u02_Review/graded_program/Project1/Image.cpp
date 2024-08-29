@@ -43,19 +43,18 @@ void Image::Draw()
 {
     cout << endl;
 
-    // TODO: Use a for loop to iterate over all the rows within the `pixelrows` member vector.
-    // TODO: Create an INTERNAL for loop that iterates over all the characters in the `pixelrows[row]` string.
-    // TODO: Within the internal for loop, call the DrawPixel function, passing in the current pixel `pixelrows[row][col]`.
-    // TODO: When the INTERNAL loop is over (but still inside the OUTER loop), use `cout << CLEAR << endl;` to end the line of pixels.
-
-    for (int i=0; i<pixelrows.size(); i++)
-        for (int j = 0; j < pixelrows.size(); j++) {
+    // Iterate over all the rows within the `pixelrows` member vector
+    for (int i = 0; i < pixelrows.size(); i++) {
+        // Iterate over all the characters in the `pixelrows[i]` string
+        for (int j = 0; j < pixelrows[i].size(); j++) {
+            // Draw the current pixel
             DrawPixel(pixelrows[i][j]);
         }
-    cout << CLEAR << endl;
-
-
+        // End the line of pixels and clear formatting for the next line
+        cout << CLEAR << endl;
+    }
 }
+
 
 //! Returns the filename member variable. const because we don't want it to be able to modify any class member variables.
 string Image::GetFilename() const

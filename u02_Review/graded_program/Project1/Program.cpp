@@ -42,14 +42,13 @@ void Program::Menu_Main()
 
     case 1:
       // TODO: Call the Menu_LoadImage function.
-
-
-
+        Menu_LoadImage();
+     
       break;
 
     case 2:
       // TODO: Call the Menu_DrawImage function.
-
+        Menu_DrawImage();
 
 
       break;
