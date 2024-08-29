@@ -14,7 +14,7 @@ void Image::Load( string new_filename )
     string line;
 
     // TODO: Use `input`'s open function and pass in the `filename`.
-    input.open(filename);
+    input.open(new_filename);
 
 
     // TODO: If `input.fail()` is true then display an error (couldn't find file) and return.
@@ -29,7 +29,9 @@ void Image::Load( string new_filename )
     // TODO: WHILE we are able to load a line from `input` to `line` using getline
     //       Within the loop, use `pixelrows`'s push_back function, passing in the `line` we read.
     
-
+    while (getline(input, line)) {
+        pixelrows.push_back(line);
+    }
 
 
 
@@ -46,6 +48,11 @@ void Image::Draw()
     // TODO: Within the internal for loop, call the DrawPixel function, passing in the current pixel `pixelrows[row][col]`.
     // TODO: When the INTERNAL loop is over (but still inside the OUTER loop), use `cout << CLEAR << endl;` to end the line of pixels.
 
+    for (int i=0; i<pixelrows.size(); i++)
+        for (int j = 0; j < pixelrows.size(); j++) {
+            DrawPixel(pixelrows[i][j]);
+        }
+    cout << CLEAR << endl;
 
 
 }
