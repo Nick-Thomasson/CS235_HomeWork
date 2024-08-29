@@ -14,9 +14,11 @@ class Image
 
     private:
     // TODO: Add a vector of strings named `pixelrows`
+        vector <string> pixelrows;
 
 
     // TODO: Add a string named `filename`
+        string filename;
 
 };
 
