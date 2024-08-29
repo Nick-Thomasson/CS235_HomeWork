@@ -18,6 +18,28 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Colors.cpp" />
+    <ClCompile Include="Image.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Program.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Colors.h" />
+    <ClInclude Include="Image.h" />
+    <ClInclude Include="Program.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="image1.txt" />
+    <Text Include="image2.txt" />
+    <Text Include="image3.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="instructions.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="screenshot_example.png" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -126,9 +148,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\Colors.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
