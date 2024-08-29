@@ -14,16 +14,21 @@ void Image::Load( string new_filename )
     string line;
 
     // TODO: Use `input`'s open function and pass in the `filename`.
+    input.open(filename);
 
 
     // TODO: If `input.fail()` is true then display an error (couldn't find file) and return.
-
+    if (input.fail()) {
+        cout << "Unable to find the file!" << endl;
+        return;
+    }
 
     // TODO: Set the `filename` member variable to the `new_filename` parameter's value.
-
+    filename = new_filename;
 
     // TODO: WHILE we are able to load a line from `input` to `line` using getline
     //       Within the loop, use `pixelrows`'s push_back function, passing in the `line` we read.
+    
 
 
 
