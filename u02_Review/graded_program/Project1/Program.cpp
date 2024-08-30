@@ -72,9 +72,6 @@ void Program::Menu_LoadImage()
 
   // TODO: Call the `image` variable's Load function, passing in the `filename` variable.
   image.Load(filename);
-
-
-
   cout << endl;
   PressEnterToContinue();
 }
@@ -97,17 +94,18 @@ void Program::Menu_DrawImage()
 //! Gets input from the user, makes sure it is between min-max and returns the result
 int Program::GetValidInput( int min, int max )
 {
-  int input;
-  cout << "(" << min << "-" << max <<"): ";
-  cin >> input;
+    int input;
+    do {
+        cout << "(" << min << "-" << max << "): ";
+        cin >> input;
 
+        if (input < min || input > max) {
+            cout << "Invalid choice, please try again." << endl;
+        }
 
-  // TODO: While the input is invalid display an error and have them re-enter their selection.
-  // Choice is invalid if it is less than min or greater than max.
+    } while (input < min || input > max);
 
-
-
-  return input;
+    return input;
 }
 
 
