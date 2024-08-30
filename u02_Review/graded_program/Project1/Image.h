@@ -13,11 +13,11 @@ class Image
     string GetFilename() const;
 
     private:
-    // TODO: Add a vector of strings named `pixelrows`
+    //! TODO: Add a vector of strings named `pixelrows`
         vector <string> pixelrows;
 
 
-    // TODO: Add a string named `filename`
+    //! TODO: Add a string named `filename`
         string filename;
 
 };
