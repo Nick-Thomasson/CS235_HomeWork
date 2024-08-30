@@ -20,17 +20,13 @@ void Program::Menu_Main()
     // TODO: Call the `image` variable's GetFilename function.
     cout << image.GetFilename();
 
-
-
     cout << "\"" << endl << endl;
-
     cout << "0. Exit" << endl;
     cout << "1. Load image" << endl;
     cout << "2. Draw image" << endl;
     cout << endl;
 
     // TODO: Call the GetValidInput function, passing in 0 and 2, and storing the result in the `choice` variable.
-
     choice = GetValidInput(0, 2);
 
 

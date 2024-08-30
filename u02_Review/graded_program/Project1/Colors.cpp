@@ -21,6 +21,7 @@ using namespace std;
 | 'W'        | `cout << WHITE;`   |
 */
 
+//! Testing the tooltip feature
 void DrawPixel(char code)
 {
     switch (code)
@@ -53,7 +54,7 @@ void DrawPixel(char code)
         cout << WHITE;
         break;
     default:
-        cout << CLEAR; // Default to clear if the code is not recognized
+        cout << CLEAR;
         break;
     }
 
