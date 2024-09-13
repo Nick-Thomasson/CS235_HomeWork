@@ -87,13 +87,23 @@ Increment `m_itemCount` afterwards.
 */
 void Array::AddItem( string value )
 {
+	if (m_itemCount == m_arraySize) {
+		ResizeArray();
+	}
+	m_ptr[m_itemCount] = value;
+	m_itemCount++;
 }
+
 
 /**
 Display the index and element of each item in the `m_ptr` array.
 */
 void Array::Display()
 {
+	for (int i = 0; i < m_itemCount; i++) {
+		cout << "The element is: " << m_ptr[i] << endl;
+		cout << "And the index is: " << i << endl;
+	}
 }
 
 
