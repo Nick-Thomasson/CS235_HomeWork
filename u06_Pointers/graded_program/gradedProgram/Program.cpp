@@ -7,6 +7,8 @@ void Program()
 {
     Array array;
     int choice;
+    int arraySize;
+    string item;
     bool running = true;
 
     while (running) {
@@ -32,22 +34,32 @@ void Program()
 
         case 1:
             cout << "You chose 1..... Create array..." << endl;
-            
+            cout << "Please enter the array size: " << endl;
+            cin >> arraySize;
+            array = Array(arraySize);
+            cout << "You've created an array of size: " << arraySize << endl;
             break;
 
         case 2:
             cout << "You chose 2..... Allocate space..." << endl;
+            array.AllocateSpace(arraySize);
+            cout << "Space allocated for " << arraySize << endl;
            
             break;
 
         case 3:
             cout << "You chose 3..... Add items..." << endl;
             cout << "Please add the item (string): ";
+            cin >> item;
+            array.AddItem(item);
+            cout << "You've added " << item << endl;
+
             break;
 
         case 4:
             cout << "You chose 4..... Resize array..." << endl;
             array.ResizeArray(); 
+            cout << "The array has been updated to " << arraySize * 2 << endl;
             break;
 
         case 5:
