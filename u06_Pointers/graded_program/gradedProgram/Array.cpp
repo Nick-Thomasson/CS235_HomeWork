@@ -8,6 +8,9 @@ initialize m_arraySize and m_itemCount to 0.
 */
 Array::Array()
 {
+	m_ptr = nullptr;
+	m_arraySize = 0;
+	m_itemCount = 0;
 }
 
 /**
@@ -16,6 +19,8 @@ then call AllocateSpace with the `arraySize` passed in.
 */
 Array::Array( int arraySize )
 {
+	m_ptr = nullptr;
+	AllocateSpace(arraySize);
 }
 
 /**
@@ -23,6 +28,7 @@ Destructor: Call the DeallocateSpace function.
 */
 Array::~Array()
 {
+	DeallocateSpace();
 }
 
 /**
@@ -32,6 +38,12 @@ Also initialize `m_itemCount` to 0 and `m_arraySize` to the `arraySize` passed i
 */
 void Array::AllocateSpace( int arraySize )
 {
+	if (m_ptr != nullptr) {
+		return;
+	};
+	m_ptr = new string[arraySize];
+	m_itemCount = 0;
+	m_arraySize = arraySize;
 }
 
 /**
@@ -40,6 +52,10 @@ and reset `m_ptr` to nullptr.
 */
 void Array::DeallocateSpace()
 {
+	if (m_ptr != nullptr) {
+		delete[] m_ptr;
+		m_ptr = nullptr;
+	}
 }
 
 /**
@@ -51,6 +67,17 @@ Update `m_arraySize` to the new size.
 */
 void Array::ResizeArray()
 {
+	int newSize = m_arraySize * 2;
+	string* newPtr;
+	newPtr = new string[newSize];
+
+	for (int i = 0; i < m_itemCount; i++){
+		newPtr[i] = m_ptr[i];
+	}
+	delete[] m_ptr;
+	m_ptr = newPtr;
+	m_arraySize = newSize;
+	
 }
 
 /**
