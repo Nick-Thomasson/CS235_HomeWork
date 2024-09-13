@@ -5,9 +5,9 @@ using namespace std;
 
 void Program()
 {
+    int arraySize = 0;
     Array array;
     int choice;
-    int arraySize;
     string item;
     bool running = true;
 
@@ -24,7 +24,6 @@ void Program()
         cout << "Enter a number: " << endl;
         cin >> choice;
 
-        // Handle the user’s choice
         switch (choice)
         {
         case 0:
@@ -73,3 +72,4 @@ void Program()
         }
     }
 }
+//
