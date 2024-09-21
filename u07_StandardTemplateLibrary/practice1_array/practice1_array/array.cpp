@@ -10,6 +10,7 @@ int main()
 
 
   // - STUDENT CODE ----------------------------------------------------------
+
   array <string, 4> course_list;
   course_list[0] = "CS 123";
   course_list[1] = "CS 1234";
