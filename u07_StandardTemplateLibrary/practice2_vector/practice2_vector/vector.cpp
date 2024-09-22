@@ -9,7 +9,7 @@ int main()
 
   // - STUDENT CODE ----------------------------------------------------------
   cout << endl << "Declare a vector of strings..." << endl;
-  //
+  vector <string> myVector;
   // -------------------------------------------------------------------------
 
   bool done = false;
@@ -24,15 +24,17 @@ int main()
       }
 
       // - STUDENT CODE ----------------------------------------------------------
-      cout << endl << "Pushing new item into the vector..." << endl;
-      
+      cout << endl << "Pushing new item into the vector... Press a key to continue" << endl;
+          myVector.push_back(input);
       // -------------------------------------------------------------------------
   }
 
 
   // - STUDENT CODE ----------------------------------------------------------
   cout << endl << "Iterating over the vector to display each element's index and value..." << endl;
-
+  for (size_t i = 0; i < myVector.size(); i++) {
+      cout << myVector[i] << endl;
+  }
   // -------------------------------------------------------------------------
 
 
