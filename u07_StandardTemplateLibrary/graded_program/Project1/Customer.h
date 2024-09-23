@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include <stack>
 using namespace std;
 
 #include "Product.h"
