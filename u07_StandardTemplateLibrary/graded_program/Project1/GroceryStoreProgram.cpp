@@ -11,7 +11,7 @@ using namespace std;
 void GroceryStoreProgram::Stock( string product, float price )
 {
   PrintTimestamp();
-  // TODO: Implement me
+  product_prices[product] =  price;
 }
 
 /**
@@ -19,8 +19,10 @@ void GroceryStoreProgram::Stock( string product, float price )
 */
 void GroceryStoreProgram::CustomerEnterStore( string customer_name )
 {
+    Customer customer;
   PrintTimestamp();
-  // TODO: Implement me
+  customer.name = customer_name;
+  customers_in_store[customer_name] = customer;
 }
 
 /**
