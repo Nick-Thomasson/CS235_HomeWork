@@ -10,7 +10,7 @@ int main()
 
   // - STUDENT CODE ----------------------------------------------------------
   cout << endl << "Declaring a queue of strings..." << endl;
-  
+  queue <string> myQueue;
   // -------------------------------------------------------------------------
 
   bool done = false;
@@ -19,7 +19,12 @@ int main()
     cout << string( 50, '-' ) << endl;
     // - STUDENT CODE ----------------------------------------------------------
     // TODO: If the queue is empty display "Queue is empty", otherwise display the front-most item.
-    
+    if (myQueue.empty()) {
+        cout << "Looks like the queue is empty!" << endl;
+    }
+    else {
+        cout << "The front-most item is currently: " << myQueue.front();
+    }
     // -------------------------------------------------------------------------
 
     cout << string( 50, '-' ) << endl;
@@ -41,12 +46,13 @@ int main()
       {
         string text;
         cout << "Enter new text to push on queue: ";
-        cin >> text;
+        cin.ignore();
+        getline(cin, text);
 
 
         // - STUDENT CODE ----------------------------------------------------------
-        cout << endl << "Pushing the new item into the queue..." << endl;
-        
+        cout << endl << "Pushing " << text << " into the queue..." << endl;
+        myQueue.push(text);
         // -------------------------------------------------------------------------
       }
       break;
@@ -56,7 +62,7 @@ int main()
 
         // - STUDENT CODE ----------------------------------------------------------
         cout << endl << "Popping the front item out of the queue..." << endl;
-        
+        myQueue.pop();
         // -------------------------------------------------------------------------
       break;
     }
@@ -66,7 +72,10 @@ int main()
 
   // - STUDENT CODE ----------------------------------------------------------
   cout << endl << "Iterate over queue until it's empty... show the front item then pop it..." << endl;
-  
+  while (!myQueue.empty()) {
+      cout << myQueue.front() << endl;
+      myQueue.pop();
+  }
   // -------------------------------------------------------------------------
 
 
