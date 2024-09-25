@@ -38,16 +38,12 @@ void GroceryStoreProgram::CustomerOops( string customer_name )
   
 }
 
-
-
-
-/**
-@param  customer          The name of the customer who is lining up in the checkout queue
-*/
 void GroceryStoreProgram::CustomerLineup( string customer_name )
 {
   PrintTimestamp();
-  // TODO: Implement me
+  Customer& customer = customers_in_store[customer_name];
+  checkout_queue.push(customer);
+  
 }
 
 void GroceryStoreProgram::Process()
@@ -56,6 +52,12 @@ void GroceryStoreProgram::Process()
 
   PrintTimestamp();
   cout << "Done processing line!" << endl;
+
+  while (!checkout_queue.empty()) {
+      cout << "Customer in front of line is: " << checkout_queue.front().name;
+      float totalCost = 0;
+
+  }
 }
 
 
