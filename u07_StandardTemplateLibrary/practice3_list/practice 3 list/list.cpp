@@ -10,7 +10,7 @@ int main()
 
   // - STUDENT CODE ----------------------------------------------------------
   cout << endl << "Declare a list of strings..." << endl;
-  
+  list <string> myList;
   // -------------------------------------------------------------------------
 
   bool done = false;
@@ -30,21 +30,25 @@ int main()
       {
         // - STUDENT CODE ----------------------------------------------------------
         cout << endl << "Pushing new item to front of list..." << endl;
-        
+        myList.push_front(input);
         // -------------------------------------------------------------------------
       }
       else if ( position == "B" )
       {
         // - STUDENT CODE ----------------------------------------------------------
         cout << endl << "Pushing new item to back of list..." << endl;
-        
+        myList.push_back(input);
         // -------------------------------------------------------------------------
       }
   }
 
   // - STUDENT CODE ----------------------------------------------------------
   cout << endl << "Iterating over the list to display each element's  value..." << endl;
-  
+  while (!myList.empty())
+  {
+      std::cout << ' ' << myList.front();
+      myList.pop_front();
+  }
   // -------------------------------------------------------------------------
 
   cout << endl << "THE END" << endl;

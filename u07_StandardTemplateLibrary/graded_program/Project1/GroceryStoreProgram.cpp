@@ -4,51 +4,46 @@
 #include <fstream>
 using namespace std;
 
-/**
-@param  product          The name of the product to be stocked on the shelves
-@param  price            The price of the product to be stocked on the shelves
-*/
+
 void GroceryStoreProgram::Stock( string product, float price )
 {
   PrintTimestamp();
-  // TODO: Implement me
+  product_prices[product] =  price;
 }
 
-/**
-@param  customer          The name of the customer who has entered the store
-*/
 void GroceryStoreProgram::CustomerEnterStore( string customer_name )
 {
+  Customer customer;
   PrintTimestamp();
-  // TODO: Implement me
+  customer.name = customer_name;
+  customers_in_store[customer_name] = customer;
 }
 
-/**
-@param  customer          The name of the customer who is adding an item to their cart
-@param  product           The name of the product that the customer is adding to their cart
-*/
 void GroceryStoreProgram::CustomerCartAdd( string customer_name, string product_name )
 {
   PrintTimestamp();
-  // TODO: Implement me
+  
+
+  Customer& customer = customers_in_store[customer_name];
+  customer.products_in_cart.push(product_name);
+
+  
 }
 
-/**
-@param  customer          The name of the customer who is putting an item back/removing from cart
-*/
 void GroceryStoreProgram::CustomerOops( string customer_name )
 {
   PrintTimestamp();
-  // TODO: Implement me
+  Customer& customer = customers_in_store[customer_name];
+  customer.products_in_cart.pop();
+  
 }
 
-/**
-@param  customer          The name of the customer who is lining up in the checkout queue
-*/
 void GroceryStoreProgram::CustomerLineup( string customer_name )
 {
   PrintTimestamp();
-  // TODO: Implement me
+  Customer& customer = customers_in_store[customer_name];
+  checkout_queue.push(customer);
+  
 }
 
 void GroceryStoreProgram::Process()
@@ -57,6 +52,12 @@ void GroceryStoreProgram::Process()
 
   PrintTimestamp();
   cout << "Done processing line!" << endl;
+
+  while (!checkout_queue.empty()) {
+      cout << "Customer in front of line is: " << checkout_queue.front().name;
+      float totalCost = 0;
+
+  }
 }
 
 
