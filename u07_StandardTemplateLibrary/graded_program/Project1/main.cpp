@@ -7,7 +7,7 @@
 #include "GroceryStoreProgram.h"
 
 enum class ProgramAction { TEST, PROGRAM };
-void Tester();
+void Tester_GroceryStoreProgram();
 int main( int argCount, char* args[] )
 {
   std::string program_name = "GROCERY STORE SIMULATOR";
@@ -43,7 +43,7 @@ int main( int argCount, char* args[] )
   // Execute action
   if ( action == ProgramAction::TEST )
   {
-    Tester();
+    Tester_GroceryStoreProgram();
   }
   else
   {
@@ -55,58 +55,6 @@ int main( int argCount, char* args[] )
 }
 
 // - AUTOMATED TESTER -------------------------------------------------------//
-void Tester_GroceryStoreProgram();
-void Tester()
-{
-  const std::string GRN = "\033[0;32m"; const std::string RED = "\033[0;31m";
-  const std::string BOLD = "\033[0;35m"; const std::string CLR = "\033[0m";
-
-  const int TOTAL_TESTS = 2;
-  float  in1[TOTAL_TESTS]; // inputs 1
-  float  in2[TOTAL_TESTS]; // inputs 2
-  int    in3[TOTAL_TESTS]; // inputs 3
-  float  exo[TOTAL_TESTS]; // expected output
-  float  aco[TOTAL_TESTS]; // actual output
-
-  // Setup test 1
-  in1[0] = 60000;
-  in2[0] = 5;
-  in3[0] = 5;
-  exo[0] = 76576.89;
-
-  // Setup test 2
-  in1[1] = 100000;
-  in2[1] = 10;
-  in3[1] = 3;
-  exo[1] = 133100;
-
-  // Run tests
-  for ( int i = 0; i < TOTAL_TESTS; i++ )
-  {
-    std::cout << CLR;
-    aco[i] = 1;// FUNCTION CALLCalculateRaise( in1[i], in2[i], in3[i] );
-
-    // Range-based check because of floats, woo.
-    if ( aco[i] >= exo[i] - 1 && aco[i] <= exo[i] + 1 )
-    {
-      // PASS
-      std::cout << GRN << "[PASS] ";
-      std::cout << " TEST " << i+1 << ", CalculateRaise(" << in1[i] << ", " << in2[i] << ", " << in3[i] << ") = " << aco[i] << std::endl;
-    }
-    else
-    {
-      // FAIL
-      std::cout << RED << "[FAIL] ";
-      std::cout << " TEST " << i+1 << ", CalculateRaise(" << in1[i] << ", " << in2[i] << ", " << in3[i] << ")" << std::endl;
-      std::cout << "   EXPECTED OUTPUT: [" << exo[i] << "]" << std::endl;
-      std::cout << "   ACTUAL OUTPUT:   [" << aco[i] << "]" << std::endl;
-    }
-  }
-  std::cout << CLR;
-}
-
-
-
 //   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //   !! DON'T MODIFY ANYTHING BELOW THIS POINT! !!
 //   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
