@@ -59,15 +59,25 @@ e.Pop the customer from the checkout queue.
 
 void GroceryStoreProgram::Process() {
     // TODO: Implement me
-    Customer customer;
+    
     PrintTimestamp();
     cout << "Done processing line!" << endl;
 
     while (!checkout_queue.empty()) {
+        Customer& customer = checkout_queue.front();
         cout << "Customer in front of line is: " << checkout_queue.front().name;
         float totalCost = 0;
-        
-    };
+
+        while (!customer.products_in_cart.empty()) {
+            string product_name = customer.products_in_cart.top();
+            float price = product_prices[product_name];
+            totalCost += price;
+            cout << "Product: " << product_name << " - Price: $" << price << endl;
+            customer.products_in_cart.pop();
+        };
+        cout << "Checkout done for: " << customer.name << ". Total is: $" << totalCost << endl;
+        checkout_queue.pop();
+    }
 }
 
 
