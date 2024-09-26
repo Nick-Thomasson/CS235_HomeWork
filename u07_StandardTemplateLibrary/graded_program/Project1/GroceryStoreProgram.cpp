@@ -45,19 +45,31 @@ void GroceryStoreProgram::CustomerLineup( string customer_name )
   checkout_queue.push(customer);
   
 }
+/*
+
+
+c.For the front customer, while their `products_in_cart` stack is not empty:
+I.Get the price of the next item - use the `product_prices` and the key of the product name.
+II.Add the product price to your total variable.
+III.Display the front item in the customer's cart and the price.
+IV.Pop the top item from the `products_in_cart`.
+d.After the while loop, display that checkout is done and the total amount of money.
+e.Pop the customer from the checkout queue.
+*/
 
 void GroceryStoreProgram::Process()
 {
-  // TODO: Implement me
+    // TODO: Implement me
 
-  PrintTimestamp();
-  cout << "Done processing line!" << endl;
+    PrintTimestamp();
+    cout << "Done processing line!" << endl;
 
-  while (!checkout_queue.empty()) {
-      cout << "Customer in front of line is: " << checkout_queue.front().name;
-      float totalCost = 0;
+    while (!checkout_queue.empty()) {
+        cout << "Customer in front of line is: " << checkout_queue.front().name;
+        float totalCost = 0;
+        while (customers_in_store
 
-  }
+    }
 }
 
 
