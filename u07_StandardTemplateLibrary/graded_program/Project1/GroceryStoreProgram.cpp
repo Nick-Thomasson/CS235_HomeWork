@@ -57,21 +57,18 @@ d.After the while loop, display that checkout is done and the total amount of mo
 e.Pop the customer from the checkout queue.
 */
 
-void GroceryStoreProgram::Process()
-{
+void GroceryStoreProgram::Process() {
     // TODO: Implement me
-
+    Customer customer;
     PrintTimestamp();
     cout << "Done processing line!" << endl;
 
     while (!checkout_queue.empty()) {
         cout << "Customer in front of line is: " << checkout_queue.front().name;
         float totalCost = 0;
-        while (customers_in_store
-
-    }
+        
+    };
 }
-
 
 
 //   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
