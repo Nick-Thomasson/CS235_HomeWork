@@ -1,23 +1,17 @@
 #include <iostream>
 using namespace std;
 
-/**
- * Abc_Iterative
- * Builds a string that contains characters
- * from `start` to `end` by using a loop
- * and returns the result.
- * */
+
 string Abc_Iterative( char start, char end )
 {
   string built_string = "";
-  // - STUDENT CODE ----------------------------------------------------------
   for (char i = start; i <= end; i++){
       built_string += i;
       cout << i;
   }
-  // -------------------------------------------------------------------------
   return built_string;
 }
+
 
 /**
  * Abc_Recursive
@@ -27,10 +21,14 @@ string Abc_Iterative( char start, char end )
  * */
 string Abc_Recursive( char start, char end )
 {
-  // - STUDENT CODE ----------------------------------------------------------
-
-  return "X"; // TODO: Remove this line of code, it's a placeholder!
-  // -------------------------------------------------------------------------
+    
+    if (start > end) {
+        return "";
+    }
+    cout << start;
+    
+    return start + Abc_Recursive(start + 1, end);
+    
 }
 
 void Test_Abc();
