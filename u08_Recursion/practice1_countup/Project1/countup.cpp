@@ -9,7 +9,11 @@ using namespace std;
 void CountUp_Iterative( int start, int end )
 {
   // - STUDENT CODE ----------------------------------------------------------
-
+	
+	for (start < end; start++;) {
+		cout << start;
+	}
+	
   // -------------------------------------------------------------------------
 }
 
