@@ -1,19 +1,14 @@
 #include <iostream>
 using namespace std;
 
-/**
- * CountLetter_Iterative
- * @param   text              The string of text to investigate
- * @param   letter_to_count   Which letter we're counting
- * This function goes through the string (iteratively), character by character,
- * and if it finds `letter_to_count`,  it counts the letter.
- * */
 int CountLetter_Iterative( string text, char letter_to_count )
 {
   int total_letter = 0;
-  // - STUDENT CODE ----------------------------------------------------------
-
-  // -------------------------------------------------------------------------
+  for (int i = 0; i < text.size(); i++) {
+      if (letter_to_count == text[i]) {
+          total_letter++;
+      }
+  }
   return total_letter;
 }
 
@@ -27,10 +22,12 @@ int CountLetter_Iterative( string text, char letter_to_count )
  * */
 int CountLetter_Recursive( string text, char letter_to_count, size_t i )
 {
-  // - STUDENT CODE ----------------------------------------------------------
-
+    
+    if (i > text.size()) {
+        return;
+    }
   return 0; // TODO: Remove this line of code, it's a placeholder!
-  // -------------------------------------------------------------------------
+ 
 }
 
 void Test_Abc();
