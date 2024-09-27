@@ -134,3 +134,12 @@ queue documentation: https://cplusplus.com/reference/queue/queue/
 map documetation:    https://cplusplus.com/reference/map/map/
 
 
+private:
+    //! The queue of customers waiting in line to purchase their items
+    queue<Customer> checkout_queue;
+
+    //! The lookup table of products' prices
+    map<string, float> product_prices;
+
+    //! The lookup table of all customers in the store, by name
+    map<string, Customer> customers_in_store;

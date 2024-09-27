@@ -1,32 +1,22 @@
 #include <iostream>
 using namespace std;
 
-/**
- * CountUp_Iterative
- * Uses a loop to display all numbers from `start`
- * to `end`, inclusive.
- * */
+
 void CountUp_Iterative( int start, int end )
 {
-  // - STUDENT CODE ----------------------------------------------------------
-	
-	for (start < end; start++;) {
-		cout << start;
+	int i = start;
+	for (int i = start; i <= end; i++) {
+		cout << i << " "; 
 	}
-	
-  // -------------------------------------------------------------------------
 }
 
-/**
- * CountUp_Recursive
- * Uses recursion to display all numbers from `start`
- * to `end`, inclusive.
- * */
 void CountUp_Recursive( int start, int end )
 {
-  // - STUDENT CODE ----------------------------------------------------------
-
-  // -------------------------------------------------------------------------
+    if (start > end) {
+        return;
+    }
+    cout << start << " ";
+    CountUp_Recursive(start + 1, end);
 }
 
 int main()
