@@ -11,7 +11,10 @@ string Abc_Iterative( char start, char end )
 {
   string built_string = "";
   // - STUDENT CODE ----------------------------------------------------------
-
+  for (char i = start; i <= end; i++){
+      built_string += i;
+      cout << i;
+  }
   // -------------------------------------------------------------------------
   return built_string;
 }
