@@ -1,19 +1,13 @@
 #include <iostream>
 using namespace std;
 
-/**
- * Factorial_Iterative
- * @param   n       The value to calculate n! of
- * Uses a loop to calculate the propduct of n * (n-1) * ... * 2 * 1
- * */
+
 int Factorial_Iterative( int n )
 {
   int product = 1;
-  
   for (int i = 1; i <= n; i++) {
       product = product * i;
   }
-
   return product;
 }
 
@@ -24,10 +18,7 @@ int Factorial_Iterative( int n )
  * */
 int Factorial_Recursive( int n )
 {
-  // - STUDENT CODE ----------------------------------------------------------
 
-  return 0; // TODO: Remove this line of code, it's a placeholder!
-  // -------------------------------------------------------------------------
 }
 
 void Test_Abc();
