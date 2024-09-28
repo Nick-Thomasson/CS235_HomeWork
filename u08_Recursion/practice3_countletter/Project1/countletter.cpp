@@ -20,15 +20,19 @@ int CountLetter_Iterative( string text, char letter_to_count )
  * This function goes through the string (recursively), character by character,
  * and if it finds `letter_to_count`,  it counts the letter.
  * */
-int CountLetter_Recursive( string text, char letter_to_count, size_t i )
+int CountLetter_Recursive(string text, char letter_to_count, size_t i)
 {
-    
-    if (i > text.size()) {
-        return;
+    if (i >= text.size()) {
+        return 0;
     }
-  return 0; // TODO: Remove this line of code, it's a placeholder!
- 
+        if (text[i] == letter_to_count) {
+        return 1 + CountLetter_Recursive(text, letter_to_count, i + 1);
+         }
+            else {
+            return CountLetter_Recursive(text, letter_to_count, i + 1); // Continue recursion without adding 1
+            }
 }
+
 
 void Test_Abc();
 
