@@ -25,6 +25,30 @@ void DisplayContents( shared_ptr<FilesystemNode> current_node, int tab )
   }
 }
 
+
+
+
+/*
+### `string FindFile(shared_ptr<FilesystemNode> current_node, string find_me)`
+INPUT PARAMETERS :
+@param    `current_node`    Pointer to the current file / folder node we're looking at
+@param    `find_me`         Partial name of file / folder we're looking for
+
+RETURN:
+@return                     Returns the path to the file / folder we're searching for, uses recursion.
+
+
+1. If the current node's name has a partial match with the `find_me` parameter, then
+- RETURN this current node's name as the result.
+- PARTIAL STRING MATCH : `if (current_node->name.find(find_me) != string::npos)`
+This is true if the name contains `find_me` anywhere within.
+
+2. Afterwards, use a loop to iterate over all of the current node's contents. Within the loop:
+- RECURSE to the FindFile function, passing in this CHILD node and the `find_me` data.STORE the result in a string variable.
+- IF the result is NOT an empty string "", then we've found the file: Return `current_node->name + result`.
+
+3. After the for loop, this means nothing was found in this recursive branch.In this case, just return an empty string "".
+
 /**
 @param    current_node      Pointer to the current file/folder node we're looking at
 @param    find_me           Partial name of file/folder we're looking for
@@ -32,10 +56,16 @@ void DisplayContents( shared_ptr<FilesystemNode> current_node, int tab )
 */
 string FindFile( shared_ptr<FilesystemNode> current_node, string find_me )
 {
-  // - STUDENT CODE ----------------------------------------------------------
-
-  // -------------------------------------------------------------------------
-  return ""; // Return empty string if not found
+    if (current_node->name.find(find_me) != string::npos) {
+        return current_node->name;
+    }
+    for (auto& child : current_node->contents) {
+        string result = FindFile(child, find_me);
+        if (!result.empty()) {
+            return current_node->name + result;
+        }
+    }
+    return "";
 }
 
 
