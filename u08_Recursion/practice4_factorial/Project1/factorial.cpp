@@ -9,9 +9,11 @@ using namespace std;
 int Factorial_Iterative( int n )
 {
   int product = 1;
-  // - STUDENT CODE ----------------------------------------------------------
+  
+  for (int i = 1; i <= n; i++) {
+      product = product * i;
+  }
 
-  // -------------------------------------------------------------------------
   return product;
 }
 
