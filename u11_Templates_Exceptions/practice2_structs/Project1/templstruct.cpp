@@ -37,46 +37,26 @@ public:
 
 // - STUDENT CODE ----------------------------------------------------------
 // TODO: Convert this into a templated struct/class
+template <typename T> 
 class ShoppingCart
 {
 private:
-  vector<GenericProduct> products_generic;
-  vector<FoodProduct> products_food;
-  vector<MovieProduct> products_movie;
+    vector<T> products;
+
 
 public:
-  void AddProduct( GenericProduct new_product )
-  {
-    products_generic.push_back( new_product );
-  }
+    void AddProduct(T new_product)
+    {
+        products.push_back(new_product);
+    }
 
-  void AddProduct( FoodProduct new_product )
-  {
-    products_food.push_back( new_product );
-  }
-
-  void AddProduct( MovieProduct new_product )
-  {
-    products_movie.push_back( new_product );
-  }
-
-  void DisplayProducts() const
-  {
-    for ( const GenericProduct& p : products_generic )
-      {
-        p.Display();
-      }
-
-    for ( const FoodProduct& p : products_food )
-      {
-        p.Display();
-      }
-
-    for ( const MovieProduct& p : products_movie )
-      {
-        p.Display();
-      }
-  }
+    void DisplayProducts() const
+    {
+        for (const T& p : products)
+        {
+            p.Display();
+        }
+    }
 };
 // -------------------------------------------------------------------------
 
@@ -98,13 +78,20 @@ int main()
   product3.name = "Kiki's Delivery Service";
   product3.price = 19.99;
   product3.rating = "G";
+   
+  ShoppingCart<GenericProduct> cart_generic;
+  cart_generic.AddProduct(product1);
+  cart_generic.DisplayProducts();
 
-  ShoppingCart cart;
-  cart.AddProduct( product1 );
-  cart.AddProduct( product2 );
-  cart.AddProduct( product3 );
+  ShoppingCart<FoodProduct> cart_food;
+  cart_food.AddProduct(product2);
+  cart_food.DisplayProducts();
 
-  cart.DisplayProducts();
+  ShoppingCart<MovieProduct> cart_movie;
+  cart_movie.AddProduct(product3);
+  cart_movie.DisplayProducts();
+
+  
 
   return 0;
 }
