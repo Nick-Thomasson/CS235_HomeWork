@@ -51,6 +51,7 @@ void PaymentMethod::Charge( float amount, int current_month, int current_year )
     {
         // - STUDENT CODE ----------------------------------------------------------
         // TODO: Throw exception!
+        throw runtime_error(to_string(exp_year) + "Is less than " + to_string(current_year));
         // -------------------------------------------------------------------------
     }
 }
