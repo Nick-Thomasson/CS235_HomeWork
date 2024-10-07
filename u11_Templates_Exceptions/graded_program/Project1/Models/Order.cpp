@@ -54,6 +54,10 @@ void Order::ChangeStatus( OrderStatus new_status )
     {
         // - STUDENT CODE ----------------------------------------------------------
         // TODO: Throw exception!
+       
+        throw invalid_argument("Going from " + OrderStatusString(this->status) + " to " + OrderStatusString(new_status) + "was invalid");
+       
+     
         // -------------------------------------------------------------------------
     }
 }
