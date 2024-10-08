@@ -46,40 +46,45 @@ void Program::Menu_Main()
     case 2: Menu_Payment();       break;
     }
 }
-
 void Program::Menu_Orders()
 {
-    DisplayHeader( "ORDERS MENU" );
-    DisplayAll( all_orders );
+    DisplayHeader("ORDERS MENU");
+    DisplayAll(all_orders);
     cout << endl;
 
     int selection = DisplayMenu(
-    {
-        "Change ORDER to SHIPPED status",
-        "Change ORDER to DELIVERED status"
-    }, false );
+        {
+            "Change ORDER to SHIPPED status",
+            "Change ORDER to DELIVERED status"
+        }, false);
 
-    int order_index;
     OrderStatus status;
 
-    switch( selection )
+    switch (selection)
     {
     case 0: status = OrderStatus::SHIPPED; break;
     case 1: status = OrderStatus::DELIVERED; break;
+    default:
+        cout << "Invalid selection." << endl;
+        return;
+    }
+    cout << endl << "Enter ORDER INDEX #: ";
+    int order_index = GetValidInput(0, all_orders.size() - 1);
+
+    try
+    {
+        all_orders[order_index].ChangeStatus(status);
+        cout << endl << "Order " << order_index << " updated successfully." << endl << endl;
+    }
+    catch (const invalid_argument& e)
+    {
+        cout << "Exception is: " << e.what() << endl;
+        cout << "Order number: " << order_index << " not updated." << endl << endl;
     }
 
-    cout << endl << "Enter ORDER INDEX #: ";
-    cin >> order_index;
-
-
-    // - STUDENT CODE ----------------------------------------------------------
-    // TODO: Risky function call!!
-    all_orders[order_index].ChangeStatus( status );
-    cout << endl << "Order " << order_index << " updated successfully." << endl << endl;
-    // -------------------------------------------------------------------------
-
-    DisplayAll( all_orders );
+    DisplayAll(all_orders);
 }
+
 
 void Program::Menu_Payment()
 {
@@ -99,8 +104,15 @@ void Program::Menu_Payment()
 
     // - STUDENT CODE ----------------------------------------------------------
     // TODO: Risky function call!!
-    all_cards[ card_index ].Charge( amount, today_month, today_year );
-    cout << endl << "Charge to card " << all_cards[ card_index ].GetLast4() << " successfully." << endl << endl;
+    try {
+        all_cards[card_index].Charge(amount, today_month, today_year);
+        cout << endl << "Charge to card " << all_cards[card_index].GetLast4() << " successfully." << endl << endl;
+    }
+    catch (const runtime_error& e)
+    {
+        cout << "EXCEPTION: " << e.what() << endl;
+        cout << "Card " << all_cards[card_index].GetLast4() << " not charged." << endl << endl;
+    }
     // -------------------------------------------------------------------------
 }
 

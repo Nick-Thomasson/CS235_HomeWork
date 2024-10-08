@@ -38,10 +38,10 @@ void PaymentMethod::Charge( float amount, int current_month, int current_year )
     }
 
 
-    if ( valid_charge )
+    if (valid_charge)
     {
         // Make fake receipt
-        ofstream output( "receipt.txt", ios_base::app );
+        ofstream output("receipt.txt", ios_base::app);
         output
             << "$" << amount
             << " charged to " << this->cc_last4
@@ -51,9 +51,9 @@ void PaymentMethod::Charge( float amount, int current_month, int current_year )
     {
         // - STUDENT CODE ----------------------------------------------------------
         // TODO: Throw exception!
-        throw runtime_error(to_string(exp_year) + "Is less than " + to_string(current_year));
-        // -------------------------------------------------------------------------
-    }
+        throw runtime_error("The card has an exp year of (" + to_string(exp_year) + ") and a month of (" + to_string(exp_month) + "). Which is less that the other card: (" + to_string(current_year) + "/" + to_string(current_month) + ").");
+            // -------------------------------------------------------------------------
+    };
 }
 
 void PaymentMethod::Display()

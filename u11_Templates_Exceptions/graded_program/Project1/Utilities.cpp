@@ -2,7 +2,7 @@
 
 
 //! TODO: Remove these here (templated definition goes in .h file)
-void DisplayAll( vector<Order> objects )
+/*void DisplayAll(vector<Order> objects)
 {
     for ( size_t i = 0; i < objects.size(); i++ )
     {
@@ -27,7 +27,7 @@ void DisplayAll( vector<Product> objects )
         cout << i << ". ";
         objects[i].Display();
     }
-}
+}*/
 
 
 

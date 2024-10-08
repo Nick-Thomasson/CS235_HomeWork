@@ -6,6 +6,7 @@ using namespace std;
 
 // - STUDENT CODE ----------------------------------------------------------
 // TODO: Implement a `NotEnoughFriendsException` custom exception
+	void NotEnoughFriendsException
 // -------------------------------------------------------------------------
 
 int SlicesPerPerson(int friends, int pizzaSlices)
