@@ -49,7 +49,19 @@ public:
 
 // Player  class -----------------------------------------------------
 
-// - STUDENT CODE ----------------------------------------------------------
+class PlayerCharacter : public ICharacter {
+public: 
+    PlayerCharacter();
+    PlayerCharacter(string new_name, int new_armour, int new_hp);
+    virtual ~PlayerCharacter();
+
+protected:
+    virtual void DecideAction(int& attack_roll, int& damage_roll);
+    virtual void Action1(int& attack_roll, int& damage_roll);
+    virtual void Action2(int& attack_roll, int& damage_roll);
+
+
+};
 
 // -------------------------------------------------------------------------
 
