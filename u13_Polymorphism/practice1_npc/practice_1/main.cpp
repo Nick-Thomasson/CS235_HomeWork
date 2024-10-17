@@ -16,7 +16,7 @@ int main()
     players.push_back( new NonPlayerCharacter( "Zeepboop", 13, 14 ) );
 
     // - STUDENT CODE ----------------------------------------------------------
-
+    players.push_back(new PlayerCharacter("Nick", 99, 99));
     // -------------------------------------------------------------------------
 
     players[0]->SetOpponentIndex( 1 );
