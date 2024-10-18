@@ -39,7 +39,17 @@ class TrueFalseQuestion : public IQuestion
 };
 
 // - STUDENT CODE ----------------------------------------------------------
+class FillInTheBlank : IQuestion {
+public:
+    FillInTheBlank();
+    FillInTheBlank(string question, string answer);
+    virtual ~FillInTheBlank();
+    bool IsCorrect(bool guess, string answer);
 
+
+protected:
+    string answer;
+};
 // -------------------------------------------------------------------------
 
 #endif
