@@ -113,9 +113,10 @@ PlayerCharacter::~PlayerCharacter() {}
 
 void PlayerCharacter::DecideAction(int& attack_roll, int& damage_roll)
 {
-	cout << "--------------------------------------------------";
+	
+	cout << "--------------------------------------------------" << endl;
 	cout << "1. Attack with Rapier \t" << "2. Attack with Shortbow" << endl;
-	cout << "--------------------------------------------------";
+	cout << "--------------------------------------------------" << endl;
 	cout << "Which option do you choose? (1, or 2)" << endl;
 	int choice;
 	cin >> choice;

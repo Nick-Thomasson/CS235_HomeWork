@@ -21,7 +21,7 @@ int main()
 
     players[0]->SetOpponentIndex( 1 );
     players[1]->SetOpponentIndex( players.size()-1 );
-
+    players[2]->SetOpponentIndex(0);
 
     bool all_alive = true;
     int round = 1;
