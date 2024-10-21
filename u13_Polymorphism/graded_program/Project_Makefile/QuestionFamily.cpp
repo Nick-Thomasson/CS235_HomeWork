@@ -71,5 +71,21 @@ bool TrueFalseQuestion::IsCorrect( bool guess )
 }
 
 // - STUDENT CODE ----------------------------------------------------------
+FillInTheBlank::FillInTheBlank() {
+    this->question = "";
+    this->answer = "";
+}
 
+FillInTheBlank::FillInTheBlank(string question, string answer) : IQuestion(question){
+
+    this->answer = question;
+}
+
+FillInTheBlank::~FillInTheBlank()
+{
+}
+
+bool FillInTheBlank::IsCorrect(bool guess, string answer) : IQuestion {
+    this answer-> == question;
+}
 // -------------------------------------------------------------------------
