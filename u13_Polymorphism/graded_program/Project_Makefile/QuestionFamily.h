@@ -39,7 +39,7 @@ protected:
 };
 
 // - STUDENT CODE ----------------------------------------------------------
-class FillInTheBlank : IQuestion {
+class FillInTheBlank : public IQuestion {
 public:
 	FillInTheBlank();
 	FillInTheBlank(string question, string answer);
@@ -52,7 +52,7 @@ protected:
 
 
 
-class MultipleChoiceQuestion :IQuestion {
+class MultipleChoiceQuestion : public IQuestion {
 public:
 	MultipleChoiceQuestion();
 	MultipleChoiceQuestion(string question, vector <string> options, int guess);

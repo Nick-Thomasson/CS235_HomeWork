@@ -115,6 +115,37 @@ MultipleChoiceQuestion::MultipleChoiceQuestion()
 {
 }
 
-MultipleChoiceQuestion::MultipleChoiceQuestion(string question, vector<string> options, int guess)
+MultipleChoiceQuestion::MultipleChoiceQuestion(string question, vector<string> options, int guess) : IQuestion(question), options(options), correct(correct)
 {
+}
+
+MultipleChoiceQuestion::~MultipleChoiceQuestion()
+{
+}
+
+bool MultipleChoiceQuestion::AskQuestion() {
+	cout << endl << string(80, '-') << endl;
+	cout << "Multiple Choice Question - ";
+	DisplayQuestion(); 
+
+	for (size_t i = 0; i < options.size(); i++) {
+		cout << i + 1 << ". " << options[i] << endl;
+	}
+
+	int selection;
+	cout << "Your answer: ";
+	cin >> selection;
+
+	bool result = IsCorrect(selection - 1);
+	if (result) {
+		cout << "Correct!!!!" << endl;
+	}
+	else {
+		cout << "Wrong!!!!" << endl;
+	}
+	return result;
+}
+
+bool MultipleChoiceQuestion::IsCorrect(int guess) {
+	return (guess == correct);
 }
