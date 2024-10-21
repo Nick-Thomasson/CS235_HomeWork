@@ -65,7 +65,7 @@ In the same file, create two more classes that inherit from `IQuestion`:
 
 
 Within QuestionFamily.cpp implement the function definitions. You can use the `TrueFalseQuestion` for reference.
-
+int
 Afterwards within Program.cpp I've already created a couple of TrueFalseQuestion objects and pushed them into the `questions` vector. Create at least one FillInQuestion and at least one MultipleChoiceQuestion and push them into the vector too.
 
 
