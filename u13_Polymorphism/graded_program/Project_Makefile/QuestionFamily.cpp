@@ -113,10 +113,13 @@ bool FillInTheBlank::IsCorrect(string guess) {
 
 MultipleChoiceQuestion::MultipleChoiceQuestion()
 {
+	this->question = "";
+	this->options = vector<string>();
 }
 
-MultipleChoiceQuestion::MultipleChoiceQuestion(string question, vector<string> options, int guess) : IQuestion(question), options(options), correct(correct)
+MultipleChoiceQuestion::MultipleChoiceQuestion(string question, vector<string> options, int guess) : IQuestion(question), options(options), correct(guess)
 {
+
 }
 
 MultipleChoiceQuestion::~MultipleChoiceQuestion()
