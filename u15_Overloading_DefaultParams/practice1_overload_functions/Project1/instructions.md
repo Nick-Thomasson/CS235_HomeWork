@@ -26,6 +26,7 @@ For this program, implement three versions of the `DisplayProduct` function. Eac
 
 1. `string name` - Within this function, use this code:
    `cout << setw( 40 ) << name << endl;`
+1. 
 
 2. `string name, float price`
    `cout << setw( 40 ) << name << setw( 20 ) << price << endl;`

@@ -10,7 +10,7 @@ class IQuestion
 {
 public:
 	IQuestion();
-	IQuestion(string new_question);
+	IQuestion(string junk);
 	virtual ~IQuestion();
 
 	virtual bool AskQuestion() = 0;

@@ -10,6 +10,9 @@ Program::Program()
     vector <string> options = { "Mario", "Luigi", "Peach", "Toad" };
     int correctAnswer = 1;
     questions.push_back(new MultipleChoiceQuestion("Which character wears a read hat with an 'M' on it?", options, correctAnswer));
+
+
+  
 }
 
 Program::~Program()
