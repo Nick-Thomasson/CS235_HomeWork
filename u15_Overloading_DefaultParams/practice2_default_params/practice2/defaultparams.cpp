@@ -4,6 +4,13 @@ using namespace std;
 
 // - STUDENT CODE ----------------------------------------------------------
 
+void DisplayProduct(string name, float price = 1 , int quantity = 1) {
+    cout << setw(40) << name << setw(20) << price << setw(20) << quantity << endl;
+
+}
+
+
+
 // -------------------------------------------------------------------------
 
 int main()
