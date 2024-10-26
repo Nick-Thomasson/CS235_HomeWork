@@ -8,22 +8,22 @@ using namespace std;
 // - STUDENT CODE ----------------------------------------------------------
 File::File()
 {
-  // TODO: Implement me!
+    
 }
 
 File::File( string name )
 {
-  // TODO: Implement me!
+    CreateFile(name);
 }
 
 File::File( string name, string ext )
 {
-  // TODO: Implement me!
+    CreateFile(name, ext);
 }
 
 File::File( const File& other )
 {
-  // TODO: Implement me!
+    CreateFile(other.name, other.ext, "Copied file");
 }
 // -------------------------------------------------------------------------
 
@@ -36,5 +36,9 @@ void File::CreateFile( string name, string ext /* ="txt" */, string text /*= "he
     cout << "Writing out file " << path << endl;
 
     // - STUDENT CODE ----------------------------------------------------------
+    ofstream output;
+    output.open(path);
+    output << text << endl;
+    output.close();
     // -------------------------------------------------------------------------
 }
