@@ -1,14 +1,10 @@
 #include <iostream>
 #include <iomanip>
 #include <vector>
+#include "Product.h"
 using namespace std;
 
-#include "Product.h"
 
-// - STUDENT CODE ----------------------------------------------------------
-// TODO: Define the Display function.
-
-// -------------------------------------------------------------------------
 
 int main()
 {
@@ -20,8 +16,7 @@ int main()
   products.push_back( Product( "PlayStation 4", 399, 2013 ) );
   products.push_back( Product( "PlayStation 5", 499, 2020 ) );
 
-  // Display( products ); // TODO: Uncomment this out
-
+  Display(products);
   cout << endl << endl;
   return 0;
 }

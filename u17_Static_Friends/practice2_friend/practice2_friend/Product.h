@@ -17,6 +17,7 @@ class Product
 
   // - STUDENT CODE ----------------------------------------------------------
   // TODO: Specify Display as a friend
+  friend void Display(const vector<Product>& products);
   // -------------------------------------------------------------------------
 };
 
