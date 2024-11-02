@@ -12,8 +12,8 @@ Fraction::Fraction()
 
 Fraction::Fraction( int num, int denom )
 {
-  num = num;
-  denom = denom;
+  this->num = num;
+  this->denom = denom;
 }
 
 float Fraction::GetDecimal() const
