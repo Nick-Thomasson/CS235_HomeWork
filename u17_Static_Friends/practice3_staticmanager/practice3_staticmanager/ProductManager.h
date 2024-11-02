@@ -3,8 +3,14 @@
 #include <vector>
 using namespace std;
 
-// - STUDENT CODE ----------------------------------------------------------
-// TODO: Declare the ProductManager class
 
-// -------------------------------------------------------------------------
+class ProductManager {
+public:
+	static vector<Product> products;
+	static void AddProduct(string name, float price, int year);
+	static void AddProduct(Product& product);
+	static void Display();
+};
 
+
+ 

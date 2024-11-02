@@ -10,7 +10,7 @@ int main()
 {
   Product example( "NES", 199, 1985 );
   
-  /*
+  
   ProductManager::AddProduct( example );
 
   ProductManager::AddProduct( "SNES", 199, 1991 );
@@ -23,7 +23,7 @@ int main()
   cout << endl << "LAUNCH PRICES" << endl << endl;
 
   ProductManager::Display();
-  * */
+
 
   cout << endl << endl;
   return 0;
