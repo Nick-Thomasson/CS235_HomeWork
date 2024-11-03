@@ -73,7 +73,7 @@ Back in the RestaurantManager class it has functions CreateOrder, ReturnMeal, Pr
 Within RestaurantManager.cpp, initialize the static member variables `orders` and `meals`.
 
 You'll implement the manager's functions as well.
-
+5
 ### `void RestaurantManager::CreateOrder( string meal_name )`
 Within this function display a message that a new order is created and the meal name.
 Create a new `Order` object and set its `meal_name`. Then, push it into the back of the `orders` list.
