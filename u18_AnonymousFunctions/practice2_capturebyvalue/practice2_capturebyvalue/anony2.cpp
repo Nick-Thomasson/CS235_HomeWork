@@ -34,7 +34,7 @@ int main()
       // TODO: Implement linear search
         for (int i = 0; i < data.size(); i++){
             if (data[i] == findme){
-                
+                cout << "This term was found at position: " << i << endl;
             }
         }
 
