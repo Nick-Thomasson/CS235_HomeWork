@@ -156,13 +156,13 @@ ZIPCODE
 }
 RESTAURANT {
 NAME
-Stouse
+stouse
 ADDRESS
-300 New Century Parkway
+300 new
 CITY
-Gardner
+gardner
 STATE
-KS
+ks
 ZIPCODE
 66061
 }

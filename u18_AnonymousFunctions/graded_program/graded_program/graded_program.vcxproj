@@ -140,6 +140,9 @@
   <ItemGroup>
     <Text Include="restaurants.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="instructions.md" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

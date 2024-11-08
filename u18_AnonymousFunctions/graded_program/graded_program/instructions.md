@@ -45,7 +45,7 @@ And the RestaurantManager has a vector `m_restaurants` which stores all of the R
 I've already implemented the `FindByName` function without an anonymous function. Your versions will be similar but you'll implement an anonymous function in each one.
 
 
-### `std::vector<Restaurant> RestaurantManager::FindByCity(std::string city)`
+### `vector<Restaurant> RestaurantManager::FindByCity(string city)`
 For this one use the **no capture** clause and write in two parameters - the vector of Restaurant objects and the string search term (city). It will have a vector of Restaurants as its return type.
 
 Within the function body, create a vector of Restaurants to store your `matches`. Iterate through all of the items in the restaurants vector and if a match is found (if the city matches) then push the match into your `matches` vector. Return your matches vector at the end.
@@ -55,9 +55,9 @@ Don't forget that at the end of the anonymous function you'll need to pass in ar
 e.g.:
 
 ```
-std::vector<Restaurant> RestaurantManager::FindByCity(std::string city)
+vector<Restaurant> RestaurantManager::FindByCity(string city)
 {
-    std::vector<Restaurant> matches;
+    vector<Restaurant> matches;
     
     matches = [CAPTURE](PARAMETERS) -> RETURNTYPE {
         // FUNCTION BODY
@@ -68,15 +68,15 @@ std::vector<Restaurant> RestaurantManager::FindByCity(std::string city)
 ```
 
 
-### `std::vector<Restaurant> RestaurantManager::FindByState(std::string state)`
+### `vector<Restaurant> RestaurantManager::FindByState(string state)`
 For this one use the **capture by-value** clause. You won't need parameters or arguments for this version. Same sort of function body here except you're comparing the State instead of the City.
 
 e.g.:
 
 ```
-std::vector<Restaurant> RestaurantManager::FindByState(std::string state)
+vector<Restaurant> RestaurantManager::FindByState(string state)
 {
-    std::vector<Restaurant> matches;
+    vector<Restaurant> matches;
 
     matches = [CAPTURE]() -> RETURNTYPE {
         // FUNCTION BODY
@@ -88,15 +88,15 @@ std::vector<Restaurant> RestaurantManager::FindByState(std::string state)
 
 
 
-### `std::vector<Restaurant> RestaurantManager::FindByZipcode(int zipcode)`
+### `vector<Restaurant> RestaurantManager::FindByZipcode(int zipcode)`
 For this one use the **capture by-reference** clause. You once again won't need any parameters or arguments for this version. Look for matching Zipcode.
 
 e.g.:
 
 ```
-std::vector<Restaurant> RestaurantManager::FindByZipcode(int zipcode)
+vector<Restaurant> RestaurantManager::FindByZipcode(int zipcode)
 {
-    std::vector<Restaurant> matches;
+    vector<Restaurant> matches;
 
     matches = [CAPTURE]() -> RETURNTYPE {
         // FUNCTION BODY

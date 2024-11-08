@@ -6,9 +6,9 @@
 using namespace std;
 
 
-std::vector<Restaurant> RestaurantManager::FindByName(std::string name)
+vector<Restaurant> RestaurantManager::FindByName(string name)
 {
-	std::vector<Restaurant> matches;
+	vector<Restaurant> matches;
 	for (auto& rest : m_restaurants)
 	{
 		if (rest.GetName() == name)
@@ -20,23 +20,26 @@ std::vector<Restaurant> RestaurantManager::FindByName(std::string name)
 }
 
 // - STUDENT CODE ----------------------------------------------------------
-std::vector<Restaurant> RestaurantManager::FindByCity(std::string city)
+vector<Restaurant> RestaurantManager::FindByCity(string city)
 {
-    std::vector<Restaurant> matches;
+    vector<Restaurant> matches;
+	[]
+	(vector<Restaurant> restrauntsList, string city)
+		-> vector<Restaurant>
+		{};
+    return matches;
+}
+
+vector<Restaurant> RestaurantManager::FindByState(string state)
+{
+    vector<Restaurant> matches;
     // TODO: Implement
     return matches;
 }
 
-std::vector<Restaurant> RestaurantManager::FindByState(std::string state)
+vector<Restaurant> RestaurantManager::FindByZipcode(int zipcode)
 {
-    std::vector<Restaurant> matches;
-    // TODO: Implement
-    return matches;
-}
-
-std::vector<Restaurant> RestaurantManager::FindByZipcode(int zipcode)
-{
-    std::vector<Restaurant> matches;
+    vector<Restaurant> matches;
     // TODO: Implement
     return matches;
 }
@@ -47,12 +50,12 @@ std::vector<Restaurant> RestaurantManager::FindByZipcode(int zipcode)
 
 void RestaurantManager::Load()
 {
-//    std::cout << "LOAD" << std::endl;
-//	const std::string FILENAME = "../restaurants.txt";
-//	std::ifstream input(FILENAME);
+//    cout << "LOAD" << endl;
+//	const string FILENAME = "../restaurants.txt";
+//	ifstream input(FILENAME);
 //	if (input.fail())
 //	{
-//		std::cout << "ERROR: Could not open " << FILENAME << std::endl;
+//		cout << "ERROR: Could not open " << FILENAME << endl;
 //		return;
 //	}
 //
@@ -76,20 +79,20 @@ void RestaurantManager::Load()
     m_restaurants.push_back( Restaurant( "Ahadu Coffee", "1531 NE Douglas St", "Lee's Summit", "MO", 64086 ) );
     m_restaurants.push_back( Restaurant( "Black Dog Coffeehouse", "12815 W 87th St Pkwy", "Lenexa", "KS", 66215 ) );
 
-	std::cout << std::endl << m_restaurants.size() << " restaurant(s) loaded." << std::endl;
+	cout << endl << m_restaurants.size() << " restaurant(s) loaded." << endl;
 }
 
 void RestaurantManager::Save()
 {
-	const std::string FILENAME = "../restaurants.txt";
-	std::ofstream output(FILENAME);
+	const string FILENAME = "../restaurants.txt";
+	ofstream output(FILENAME);
 
 	for (auto& rest : m_restaurants)
 	{
 		output << rest;
 	}
 
-	std::cout << std::endl << m_restaurants.size() << " restaurant(s) saved." << std::endl;
+	cout << endl << m_restaurants.size() << " restaurant(s) saved." << endl;
 }
 
 void RestaurantManager::AddRestaurant(Restaurant newRest)
@@ -100,33 +103,33 @@ void RestaurantManager::AddRestaurant(Restaurant newRest)
 void RestaurantManager::AddRestaurant()
 {
 	Restaurant newRest;
-	std::string name, address, city, state;
+	string name, address, city, state;
 	int zipcode;
 
-	std::cout << "Enter restaurant's name: ";
-	std::cin.ignore();
-	getline(std::cin, name);
+	cout << "Enter restaurant's name: ";
+	cin.ignore();
+	getline(cin, name);
 
-	std::cout << "Enter street address: ";
-	getline(std::cin, address);
+	cout << "Enter street address: ";
+	getline(cin, address);
 
-	std::cout << "Enter city: ";
-	getline(std::cin, city);
+	cout << "Enter city: ";
+	getline(cin, city);
 
-	std::cout << "Enter state: ";
-	getline(std::cin, state);
+	cout << "Enter state: ";
+	getline(cin, state);
 
-	std::cout << "Enter zipcode: ";
-	std::cin >> zipcode;
+	cout << "Enter zipcode: ";
+	cin >> zipcode;
 
 	newRest.Setup(name, address, city, state, zipcode);
 
 	AddRestaurant(newRest);
 
-	std::cout << std::endl << "New restaurant added." << std::endl;
+	cout << endl << "New restaurant added." << endl;
 }
 
-std::vector<Restaurant> RestaurantManager::GetAllRestaurants()
+vector<Restaurant> RestaurantManager::GetAllRestaurants()
 {
 	return m_restaurants;
 }
