@@ -19,7 +19,6 @@ vector<Restaurant> RestaurantManager::FindByName(string name)
 	return matches;
 }
 
-// - STUDENT CODE ----------------------------------------------------------
 vector<Restaurant> RestaurantManager::FindByCity(string city)
 {
 	vector<Restaurant> matches;
@@ -58,10 +57,18 @@ vector<Restaurant> RestaurantManager::FindByState(string state)
 vector<Restaurant> RestaurantManager::FindByZipcode(int zipcode)
 {
 	vector<Restaurant> matches;
-	// TODO: Implement
+	matches = [=]() -> vector<Restaurant>
+		{
+			vector<Restaurant> myMatches;
+			for (auto& restaurant : m_restaurants) {
+				if (restaurant.GetZipcode() == zipcode) {
+					myMatches.push_back(restaurant);
+				};
+			};
+			return myMatches;
+		}();
 	return matches;
 }
-// -------------------------------------------------------------------------
 
 
 
