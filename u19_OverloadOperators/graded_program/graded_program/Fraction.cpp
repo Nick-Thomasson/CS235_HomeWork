@@ -33,7 +33,7 @@ Fraction Fraction::CommonDenominatorize(const Fraction& other) const
 	}
 }
 
-// - STUDENT CODE ----------------------------------------------------------
+// - STUDENT CODE -----------------------------------------------------------
 
 ostream& operator<<(ostream& out, const Fraction& fraction)
 {
