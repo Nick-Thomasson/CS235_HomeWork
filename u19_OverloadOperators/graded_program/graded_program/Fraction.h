@@ -6,6 +6,11 @@ using namespace std;
 
 class Fraction
 {
+private:
+	int num;
+	int denom;
+
+
 public:
   Fraction();
   Fraction( int num, int denom );
@@ -37,10 +42,6 @@ public:
   friend istream& operator>>( istream& in, Fraction& fraction );
 
   friend class Tester;
-
-private:
-  int num;
-  int denom;
 };
 
 #endif
