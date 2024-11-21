@@ -5,6 +5,8 @@
 #include <vector>
 using namespace std;
 
+
+
 sf::Vector2f GetRandomPosition(int screenWidth, int screenHeight)
 {
 	sf::Vector2f pos;
