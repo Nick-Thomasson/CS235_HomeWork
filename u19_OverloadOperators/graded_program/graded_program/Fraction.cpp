@@ -32,9 +32,6 @@ Fraction Fraction::CommonDenominatorize(const Fraction& other) const
 		return Fraction(num * other.denom, denom * other.denom);
 	}
 }
-
-// - STUDENT CODE -----------------------------------------------------------
-
 ostream& operator<<(ostream& out, const Fraction& fraction)
 {
 	// TODO: Write the fraction in "n/d" format to the out stream.
@@ -70,8 +67,8 @@ Fraction operator/(const Fraction& left, const Fraction& right)
 {
 	int newNumberator;
 	int newDenom;
-	newNumberator = left.num / right.num;
-	newDenom = left.denom / right.denom;
+	newNumberator = left.num * right.denom;
+	newDenom = left.denom * right.num;
 	return Fraction(newNumberator, newDenom);
 }
 Fraction operator+(const Fraction& left, const Fraction& right)
@@ -90,44 +87,88 @@ Fraction operator+(const Fraction& left, const Fraction& right)
 	}
 	return Fraction(newNum, newDenom);
 }
-
-
-
-
-
-
 Fraction operator-(const Fraction& left, const Fraction& right)
 {
-	return Fraction(); // TEMPORARY PLACEHOLDER - REMOVE ME ONCE YOU IMPLEMENT THIS FUNCTION!
+	int newNum;
+	int newDenom;
+	if (left.denom == right.denom) {
+		newNum = left.num - right.num;
+		newDenom = left.denom;
+	}
+	else {
+		Fraction adjustedLeft = left.CommonDenominatorize(right);
+		Fraction adjustedRight = right.CommonDenominatorize(left);
+		newNum = adjustedLeft.num - adjustedRight.num;
+		newDenom = adjustedLeft.denom;
+	}
+	return Fraction(newNum, newDenom);
 }
-
 bool operator==(const Fraction& left, const Fraction& right)
 {
-	return false; // TEMPORARY PLACEHOLDER - REMOVE ME ONCE YOU IMPLEMENT THIS FUNCTION!
+	Fraction newLeftFraction = left.CommonDenominatorize(right);
+	Fraction newRightFraction = right.CommonDenominatorize(left);
+	if (newLeftFraction.num == newRightFraction.num) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
-
 bool operator!=(const Fraction& left, const Fraction& right)
 {
-	return false; // TEMPORARY PLACEHOLDER - REMOVE ME ONCE YOU IMPLEMENT THIS FUNCTION!
+	Fraction newLeftFraction = left.CommonDenominatorize(right);
+	Fraction newRightFraction = right.CommonDenominatorize(left);
+	if (newLeftFraction.num != newRightFraction.num) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
-
 bool operator<(const Fraction& left, const Fraction& right)
 {
-	return false; // TEMPORARY PLACEHOLDER - REMOVE ME ONCE YOU IMPLEMENT THIS FUNCTION!
+	Fraction newLeftFraction = left.CommonDenominatorize(right);
+	Fraction newRightFraction = right.CommonDenominatorize(left);
+	if (newLeftFraction.num < newRightFraction.num) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 bool operator>(const Fraction& left, const Fraction& right)
 {
-	return false; // TEMPORARY PLACEHOLDER - REMOVE ME ONCE YOU IMPLEMENT THIS FUNCTION!
+	Fraction newLeftFraction = left.CommonDenominatorize(right);
+	Fraction newRightFraction = right.CommonDenominatorize(left);
+	if (newLeftFraction.num > newRightFraction.num) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 bool operator<=(const Fraction& left, const Fraction& right)
 {
-	return false; // TEMPORARY PLACEHOLDER - REMOVE ME ONCE YOU IMPLEMENT THIS FUNCTION!
+	Fraction newLeftFraction = left.CommonDenominatorize(right);
+	Fraction newRightFraction = right.CommonDenominatorize(left);
+	if (newLeftFraction.num <= newRightFraction.num) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 bool operator>=(const Fraction& left, const Fraction& right)
 {
-	return false; // TEMPORARY PLACEHOLDER - REMOVE ME ONCE YOU IMPLEMENT THIS FUNCTION!
+	Fraction newLeftFraction = left.CommonDenominatorize(right);
+	Fraction newRightFraction = right.CommonDenominatorize(left);
+	if (newLeftFraction.num >= newRightFraction.num) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
-// -------------------------------------------------------------------------
